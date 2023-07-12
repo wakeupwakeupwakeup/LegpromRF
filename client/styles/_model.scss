@@ -1,0 +1,44 @@
+html,
+body,
+.__next {
+   height: 100%;
+   line-height: 1;
+   font-weight: 400;
+   color: $colorText;
+   font-size: $fontSize;
+   font-family: $fontFamily;
+   background-color: $background;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.page {
+   flex: 1 1 auto;
+   display: flex;
+   flex-direction: column;
+}
+
+[class*="__container"] {
+   max-width: $containerWidth;
+   padding: 0px $containerPadding;
+   margin: 0px auto;
+   width: 100%;
+}
+
+.lockedScroll {
+   padding-right: 17px;
+   overflow: hidden;
+ }
+ 
+
+
+
+
+
+
+
