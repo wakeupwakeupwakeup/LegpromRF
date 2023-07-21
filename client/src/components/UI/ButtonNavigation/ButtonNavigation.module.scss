@@ -1,0 +1,39 @@
+@import '@/styles/_variables.scss';
+
+.button {
+
+  &__link {
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    background: #F5F5F5;
+    color: inherit;
+    font-size: 16px;
+    padding: 20px 18px;
+    display: flex;
+    justify-content: space-between;
+    transition: all .2s ease;
+    
+    
+    &:hover {
+      background-color:$blue;
+      color: #F5F5F5;
+    }
+
+
+    &:hover svg > * {
+      stroke: #FFFFFF;
+    }
+  }
+
+  &__linkActive {
+    
+    width: 110%;
+    background-color:$blue;
+    color: #fff;
+
+    & svg > * {
+      stroke: #FFFFFF;
+    }
+  }
+}

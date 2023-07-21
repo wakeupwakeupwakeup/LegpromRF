@@ -182,10 +182,10 @@ const RegistrationLayout = ({children}) => {
               <path d="M1.11987 14.8416H18.7598C19.069 14.8416 19.3198 15.0923 19.3198 15.4016V17.0816C19.3198 17.3908 19.069 17.6416 18.7598 17.6416H1.67987C1.37063 17.6416 1.11987 17.3908 1.11987 17.0816V14.8416Z" fill="#EE2F53"/>
               <defs>
                 <linearGradient id="paint0_linear_403_40149" x1="14.2339" y1="-2.16154e-05" x2="14.2339" y2="27.9997" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#0066B3"/>
-                <stop offset="0.354167" stop-color="#0066B3"/>
-                <stop offset="0.6875" stop-color="#EE2F53"/>
-                <stop offset="1" stop-color="#EE2F53"/>
+                <stop stopColor="#0066B3"/>
+                <stop offset="0.354167" stopColor="#0066B3"/>
+                <stop offset="0.6875" stopColor="#EE2F53"/>
+                <stop offset="1" stopColor="#EE2F53"/>
                 </linearGradient>
               </defs>
             </svg>

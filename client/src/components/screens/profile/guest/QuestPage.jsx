@@ -1,9 +1,8 @@
-import Layout from "@/src/components/layout/layout";
+import Layout from "@/src/components/layout/Layout";
 
 const QuestPage = () => {
   return ( 
     <Layout >
-      sdfsdf
     </Layout>
    );
 }

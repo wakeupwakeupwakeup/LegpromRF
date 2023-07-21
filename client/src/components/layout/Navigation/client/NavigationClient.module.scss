@@ -1,0 +1,40 @@
+.nav {
+  &__head {
+    min-height: 100%;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__buttons {
+    flex: 1 1 100%;
+
+    & > * {
+      margin-top: 15px;
+    }
+  }
+
+  &__footer {
+
+  }
+
+  &__referal {
+    margin-top: 15px;
+    & a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      border-radius: 7px;
+      background: #242424;
+      color: #F2F2F2;
+      font-size: 16px;
+
+      &:hover {
+        background: #313131;
+      }
+    }
+  }
+}

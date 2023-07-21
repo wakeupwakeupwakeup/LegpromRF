@@ -1,0 +1,23 @@
+.nav {
+
+  &__head {
+    min-height: 100%;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__buttons {
+
+    & > * {
+      margin-top: 15px;
+    }
+  }
+
+  &__ad {
+    margin-top: 400px;
+  }
+
+}

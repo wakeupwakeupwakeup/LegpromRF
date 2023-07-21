@@ -1,4 +1,4 @@
-import Step2 from '@/src/components/screens/register/Step2'
+import Step2 from '@/src/components/screens/Register/Step2'
 
 export default function registerClient() {
   return (

@@ -7,18 +7,24 @@
   color: #FAFAFA;
   &__containerProfile {
 
-   
   }
 
   &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+
+    @media (min-width: 1300px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      }
+  
   }
 
   &__content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
   }
 
   &__balance {
@@ -32,7 +38,6 @@
    
     &_number {
       font-size: 20px;
-      font-weight: 500;
       margin-bottom: 4px;
     }
 
@@ -48,6 +53,11 @@
     font-size: 17px;
     border-radius: 7px;
     margin-right: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #393939;
+    }
   }
   
   &__control {
@@ -57,10 +67,7 @@
 
   &__contolButton {
     align-items: center;
-
-    &_collapse {
-      font-size: 25px;
-    }
+    cursor: pointer;
     background-color: #2C2C2C;
     padding: 10px 20px;
     border-radius: 7px;
@@ -69,11 +76,29 @@
     color: #FFF;
     font-size: 16px;
     font-weight: 300;
+    
+    &:hover {
+      background-color: #393939;
+    }
+
+    &_collapse {
+      font-size: 25px;
+
+      @media (max-width: 1300px) {
+        display: none;
+      }
+    }
+
+
 
     & > *:not(:last-child) {
       margin-right: 20px;
     }
   }
 
-  &__logo {}
+  &__logo {
+    @media (max-width: 1300px) {
+      display: none;
+    }
+  }
 }
