@@ -1,10 +1,11 @@
 import Layout from "@/src/components/layout/Layout";
 
-const QuestPage = () => {
+const Registry = () => {
   return ( 
-    <Layout >
+    <Layout>
+      sdfsdf
     </Layout>
    );
 }
  
-export default QuestPage;
+export default Registry;

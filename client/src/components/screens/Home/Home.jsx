@@ -59,8 +59,8 @@ const Home = () => {
                   <div className={styles.landing__content}>
                     <h1 className={styles.landing__title}>Пройдите регистрацию <br /> <span className={styles.landing__three}>в три</span> простых шага</h1>
                     <h4 className={styles.landing__subTitle}>и получите список подходящих вам фабрик <span className={styles.landing__star}>*</span></h4>
-                    <div className={styles.landing__auth}><Link href="/registerClient/step1">Зарегистрироваться бесплатно</Link></div>
-                    <div className={styles.landing__guest}><Link href="profile/guest/questPage">Войти как гость</Link></div>
+                    <div className={styles.landing__auth}><Link href="/register/step1">Зарегистрироваться бесплатно</Link></div>
+                    <div className={styles.landing__guest}><Link href="profile/home">Войти как гость</Link></div>
                     <div className={styles.landing__text}>
                       <span>*</span>
                       <p>

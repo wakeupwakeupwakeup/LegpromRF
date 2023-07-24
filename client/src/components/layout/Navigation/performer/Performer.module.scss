@@ -13,10 +13,6 @@
   &__buttons {
     flex: 1 1 100%;
     
-
-    & a, div  {
-      margin-top: 15px;
-    }
   }
 
   &__item {
@@ -24,7 +20,7 @@
   }
 
   &__buttonInfo {
-    min-height: 93vh;
+    height: 92vh;
     background-color: #FAFAFA;
     position: absolute;
     top: 0;
@@ -35,7 +31,7 @@
     min-width: 320px;
     opacity: 0;
     transform: translate(-10px);
-
+    pointer-events: none; 
 
     @media (max-width: 680px) {
       left: -100%;
@@ -59,6 +55,7 @@
   &__buttonActive {
     opacity: 1;
     transform: translate(0px);
+    pointer-events: all; 
 
     @media (max-width: 680px) {
       left: 0%;

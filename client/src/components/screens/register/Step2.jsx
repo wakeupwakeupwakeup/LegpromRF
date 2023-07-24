@@ -31,7 +31,7 @@ const Step2 = () => {
         <input className={ activeInput2 ? styles.form__inputActive : ''} onChange={handleChange2} type="password" placeholder="Повторите пароль"/>
       </div>
       <div className={styles.form__footer}>
-        <Link href={activeInput1 && activeInput2 ? '/registerClient/step3' : ''} className={activeInput1 && activeInput2 ?  [styles.form__buttonActive, styles.form__button].join(' ') : styles.form__button}>
+        <Link href={activeInput1 && activeInput2 ? '/register/step3' : ''} className={activeInput1 && activeInput2 ?  [styles.form__buttonActive, styles.form__button].join(' ') : styles.form__button}>
           <button 
             disabled={activeInput1 && activeInput2 ? false : true}
           >Далее</button>

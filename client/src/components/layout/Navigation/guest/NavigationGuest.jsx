@@ -15,6 +15,14 @@ const NavigationGuest = (props) => {
         <h2 className={styles.nav__title}>Гость</h2>
       </div>
       <div className={styles.nav__buttons}>
+      <ButtonNavigation title="Главная" href="/profile/home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M5.2974 7.56134V13.0494" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M9.03073 4.93524V13.0494" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M12.7035 10.4614V13.0494" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M12.7488 1H5.25167C2.63834 1 1.00024 2.84967 1.00024 5.46813V12.5319C1.00024 15.1503 2.63072 17 5.25167 17H12.7488C15.3698 17 17.0002 15.1503 17.0002 12.5319V5.46813C17.0002 2.84967 15.3698 1 12.7488 1Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </ButtonNavigation>
         <ButtonNavigation title="Просмотр ТЗ" href="/">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path d="M5.2974 7.56134V13.0494" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -23,7 +31,7 @@ const NavigationGuest = (props) => {
             <path fillRule="evenodd" clipRule="evenodd" d="M12.7488 1H5.25167C2.63834 1 1.00024 2.84967 1.00024 5.46813V12.5319C1.00024 15.1503 2.63072 17 5.25167 17H12.7488C15.3698 17 17.0002 15.1503 17.0002 12.5319V5.46813C17.0002 2.84967 15.3698 1 12.7488 1Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </ButtonNavigation>
-        <ButtonNavigation title="Реестр заказов" href="/">
+        <ButtonNavigation title="Реестр заказов" href="/profile/registry">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path fillRule="evenodd" clipRule="evenodd" d="M12.4281 1H15.0414C16.1226 1 16.9997 1.88472 16.9997 2.97615V5.61128C16.9997 6.70188 16.1226 7.58743 15.0414 7.58743H12.4281C11.3461 7.58743 10.469 6.70188 10.469 5.61128V2.97615C10.469 1.88472 11.3461 1 12.4281 1Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
             <path fillRule="evenodd" clipRule="evenodd" d="M2.95938 1H5.57184C6.65387 1 7.53097 1.88472 7.53097 2.97615V5.61128C7.53097 6.70188 6.65387 7.58743 5.57184 7.58743H2.95938C1.87735 7.58743 1.00024 6.70188 1.00024 5.61128V2.97615C1.00024 1.88472 1.87735 1 2.95938 1Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>

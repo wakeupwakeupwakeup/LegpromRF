@@ -10,14 +10,11 @@
   }
 
   &__buttons {
-
-    & > * {
-      margin-top: 15px;
-    }
+    flex: 1 1 100%;
   }
 
   &__ad {
-    margin-top: 400px;
+
   }
 
 }

@@ -25,7 +25,7 @@ const VerifyPhone = () => {
       </div>
 
       <div className={styles.form__footer}>
-          <Link href={activeInput1 ? '/registerClient/step2' : ''} className={activeInput1  ? [styles.form__buttonActive, styles.form__button].join(' ') : styles.form__button}>
+          <Link href={activeInput1 ? '/register/step2' : ''} className={activeInput1  ? [styles.form__buttonActive, styles.form__button].join(' ') : styles.form__button}>
             <button 
             disabled={activeInput1 ? false : true}
             >Далее</button>

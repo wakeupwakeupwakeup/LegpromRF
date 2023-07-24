@@ -7,14 +7,9 @@ import Image from "next/image";
 import Link from 'next/link';
 import { useState } from "react";
 
-import Footer from "./FooterProfile/Footer";
-
-import NavigationPerformer from './Navigation/performer/NavigationPerformer'
-import NavigationClient from './Navigation/client/NavigationClient';
-import NavigationGuest from './Navigation/guest/NavigationGuest';
-
-
-
+import NavigationPerformer from './Navigation/Performer/NavigationPerformer'
+import NavigationClient from './Navigation/Client/NavigationClient';
+import NavigationGuest from './Navigation/Guest/NavigationGuest';
 
 const Layout = ({children}) => {
 
@@ -57,9 +52,11 @@ const Layout = ({children}) => {
           :
           <NavigationPerformer active={activeHeader}/>
         }
+
         <div className="page__profileContainer">
           {children}
         </div>
+
       </main>
 
       <footer className={styles.footer}>

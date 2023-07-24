@@ -2,10 +2,13 @@
 
 .header {
 
-
 display: none;
   @media (max-width: 1300px) {
     display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
     border-bottom: 1px solid #EDEDED;
     background-color: #FAFAFA;
 
@@ -79,8 +82,11 @@ display: none;
 .footer {
 
   background: #1D1C1C;
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1000 !important;
  
   color: #FAFAFA;
   &__containerProfile {
@@ -117,7 +123,7 @@ display: none;
   &__balance {
     display: flex;
     align-items: center;
-    padding: 20px 0;
+    padding: 21px 0;
   }
 
   &__money {
