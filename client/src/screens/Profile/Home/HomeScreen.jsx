@@ -1,4 +1,4 @@
-import Layout from "@/src/components/layout/Layout";
+import Layout from "@/src/layout/Layout";
 
 import styles from './HomeScreen.module.scss'
 

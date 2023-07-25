@@ -217,6 +217,7 @@
     }
    
     a {
+      font-size: 14px;
       border-radius: 5px;
       background: #0036FF;
       padding: 8px 22px;
@@ -234,9 +235,10 @@
   }
 
   &__questio {
-    font-size: 12px;
+    font-size: 11px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: inherit;
 
     @media (max-width: 1610px) {

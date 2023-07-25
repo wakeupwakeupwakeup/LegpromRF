@@ -40,21 +40,23 @@ const Layout = ({children}) => {
               </div>
       </header>
 
-      <main onClick={() => setActiveHeader(false)} className="page profile" style={{backgroundColor: '#f4f4f4',}}>
+      <main  className="page profile" style={{backgroundColor: '#f4f4f4',}}>
        
         {
           userRoll === 'Клиент'
           ?
-          <NavigationClient active={activeHeader}/>
+          <NavigationClient active={activeHeader} setActive={setActiveHeader}/>
           :
           userRoll === 'Гость' ?
-          <NavigationGuest active={activeHeader}/>
+          <NavigationGuest active={activeHeader} setActive={setActiveHeader}/>
           :
-          <NavigationPerformer active={activeHeader}/>
+          <NavigationPerformer active={activeHeader} setActive={setActiveHeader}/>
         }
 
         <div className="page__profileContainer">
-          {children}
+          <div className={activeHeader ? styles.openMenu : styles.closeMenu}>
+            {children}
+          </div>
         </div>
 
       </main>

@@ -1,5 +1,5 @@
 import styles from './RegistrationLayout.module.scss'
-import HeaderLanding from '@/src/components/layout/HeaderLanding/HeaderLanding'
+import HeaderLanding from '@/src/layout/HeaderLanding/HeaderLanding'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 

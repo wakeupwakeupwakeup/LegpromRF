@@ -8,7 +8,7 @@ display: none;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 999;
+    z-index: 99;
     border-bottom: 1px solid #EDEDED;
     background-color: #FAFAFA;
 
@@ -31,7 +31,8 @@ display: none;
       width: 30px;
       height: 20px;
       cursor: pointer;
-
+      
+  
       
       & span,
       &::before,
@@ -77,6 +78,23 @@ display: none;
 .header__burger.header__menuActive::after {
   bottom: 50%;
   transform: rotate(45deg) translate(0px, 72%);
+}
+
+.openMenu {
+  margin-left: 300px;
+  transition: all .3s ease-in;
+}
+
+.closeMenu {
+  margin-left: 0px;
+  transition: all .3s ease-in;
+}
+
+@media (max-width:1300px) {
+  .openMenu {
+    margin-left: 0px;
+    transition: all .3s ease-in;
+  }
 }
 
 .footer {

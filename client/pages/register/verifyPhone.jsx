@@ -1,4 +1,4 @@
-import VerifyPhone from '@/src/components/screens/Register/VerifyPhone'
+import VerifyPhone from '@/src/screens/Register/VerifyPhone'
 
 
 export default function registerClient() {

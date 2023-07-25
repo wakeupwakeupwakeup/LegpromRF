@@ -3,8 +3,8 @@ import styles from './Performer.module.scss'
 
 
 import NavifationLayout from '../NavigationLayout/NavifationLayout';
-import HeaderNavigation from '@/src/components/UI/HeaderNavigation/HeaderNavigation';
-import ButtonNavigation from '@/src/components/UI/ButtonNavigation/ButtonNavigation';
+import HeaderNavigation from '@/src/UI/HeaderNavigation/HeaderNavigation';
+import ButtonNavigation from '@/src/UI/ButtonNavigation/ButtonNavigation';
 
 import Link from 'next/link'
 import Image from 'next/image';

@@ -37,4 +37,13 @@
       stroke: #FFFFFF;
     }
   }
+
+  &__linkActiveMenuBase {
+    background-color:$blue;
+    color: #fff;
+
+    & svg > * {
+      stroke: #FFFFFF;
+    }
+  }
 }

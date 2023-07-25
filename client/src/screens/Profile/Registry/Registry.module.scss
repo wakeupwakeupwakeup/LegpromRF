@@ -1,0 +1,131 @@
+@import '@/styles/_variables.scss';
+
+.registry {
+
+  &__title {
+    font-size: 16px;
+    margin-top: 36px;
+    margin-bottom: 15px;
+
+    @media (max-width: 1300px) {
+      margin-top: 80px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+    
+    
+    @media (max-width: 1350px) {
+      display: block;
+      align-items: center;
+    }
+
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1350px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 15px;
+    @media (max-width:1350px) {
+      width: 0;
+      display: flex;
+      flex: 1 1 100%;
+    }
+    a {
+      
+      color: #FFF;
+      font-size: 16px;
+      border-radius: 7px;
+      background-color: #242424;
+      padding: 13px;
+      width: 370px;
+    
+
+      &:hover {
+        background-color: #787777;
+      }
+      @media (max-width:1350px) {
+        width: 0;
+        display: flex;
+        flex: 1 1 100%;
+      }
+     
+    }
+
+    &_archive {
+
+      a {
+        background-color: rgba(250, 250, 250, 0.80);
+        backdrop-filter: blur(25px);
+        color: inherit;
+        margin-left: 10px;
+        &:hover {
+          background-color: #565555;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  
+  &__status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 7px;
+    border: 0.8px solid #DADADA;
+    background: rgba(245, 245, 245, 0.80);
+    backdrop-filter: blur(25px);
+    padding: 16px;
+    gap: 20px;
+
+    @media (max-width: 550px) {
+      gap: 10px;
+    }
+   
+  }
+
+  &__descriptions {
+
+    @media (max-width: 550px) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__statusItem {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+
+    @media (max-width: 1150px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+  }
+
+
+}

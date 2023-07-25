@@ -1,7 +1,7 @@
 import styles from './ButtonNavigation.module.scss'
 import Link from 'next/link'
 
-const ButtonNavigation = ({children, href, title, stopPropagation, active}) => {
+const ButtonNavigation = ({children, href, title, stopPropagation, active, activeLink}) => {
   return ( 
 
     /*onClick={(e) => stopPropagation == 'true' ? e.stopPropagation() : null*/ 
@@ -14,7 +14,7 @@ const ButtonNavigation = ({children, href, title, stopPropagation, active}) => {
           {children}
         </div>
       :
-        <Link className={styles.button__link} href={href} >
+        <Link className={activeLink ? [styles.button__link, styles.button__linkActiveMenuBase].join(' ') : styles.button__link} href={href} >
           <span className={styles.button__title}>{title}</span>
           {children}
         </Link>

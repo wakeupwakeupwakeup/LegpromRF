@@ -1,4 +1,4 @@
-import HomeScreen from '@/src/components/screens/Profile/Home/HomeScreen'
+import HomeScreen from '@/src/screens/Profile/Home/HomeScreen'
 
 export default function HomeProfile() {
   return (
