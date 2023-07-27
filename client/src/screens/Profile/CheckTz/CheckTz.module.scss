@@ -1,0 +1,313 @@
+.checktz {
+  
+  &__title {
+    font-size: 16px;
+    margin-top: 36px;
+    margin-bottom: 20px;
+
+    @media (max-width: 1300px) {
+      margin-top: 80px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    margin-top: 80px;
+  }
+
+  &__head {
+
+
+    @media (min-width: 1100px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__ico {
+    img {
+      @media (max-width: 1350px) {
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__content {
+
+    border-radius: 7px;
+    background: #FAFAFA;
+    padding: 15px;
+    width: 100%;
+    margin-left: 12px;
+    flex-wrap: wrap;
+
+    @media (max-width: 1350px) {
+      margin-left: 0;
+    }
+
+    @media (min-width: 1100px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  }
+
+  &__info {
+
+
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1100px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    margin-right: 7px;
+
+  
+  }
+
+ &__number {
+  color: #979797;
+  font-size: 12px;
+  font-weight: 300;
+ }
+
+  &__control {
+
+    @media (min-width: 1100px) {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__controlItem {
+    display: flex;
+    align-items: center;
+    border-radius: 5.077px;
+    background: #EDEDED;
+
+    @media (max-width: 800px) {
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+  }
+
+  &__controlTitle {
+    font-size: 14px;
+    line-height: 19.038px; 
+    padding: 12px 33px 12px 12px;
+    border-radius: 5.077px;
+    background: #F3F3F3;
+
+    @media (max-width: 800px) {
+      padding: 12px 0 12px 12px;
+      width: 100%;
+    }
+
+  }
+
+  &__controlIcon {
+    padding: 12px;
+
+  }
+
+  &__respond {
+    
+    @media (max-width: 1100px) {
+      width: 100%;
+      
+    }
+   
+    a {
+      border-radius: 7px;
+      background: #0036FF;
+      color: #F5F5F5;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 20px 80px;
+
+      @media (max-width: 1100px) {
+       display: flex;
+       flex: 1 1 100%;
+       text-align: center;
+       align-items: center;
+       justify-content: center;
+       margin-top: 20px;
+      }
+
+    }
+
+ 
+
+  }
+
+  &__date {
+    
+    font-size: 16px;
+    font-weight: 300;
+    margin: 23px 0;
+
+
+
+    @media (min-width: 500px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__dateInfo {
+    @media (max-width: 500px) {
+     margin-bottom: 10px;
+    }
+  }
+
+  &__dateEdit {
+    color: #979797;
+  }
+}
+
+.card {
+  border-radius: 7px;
+  border: 0.8px solid #DADADA;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.03);
+
+
+  &__body {
+    padding: 25px;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+  }
+  &__headItem {
+
+    border-radius: 5px;
+    border: 0.8px solid #242424;
+    background: #F5F5F5;
+    padding: 9px 15px;
+    transition: all .4s ease;
+    cursor: pointer;
+
+    &_active {
+      background: #242424;
+      color: #F5F5F5;
+    }
+
+    &:hover {
+      background: #242424;
+      color: #F5F5F5;
+    }
+  }
+   
+
+  &__content {
+    display: flex;
+
+    margin-top: 50px;
+  }
+
+  &__slider {
+    width: 585px;
+  }
+
+  &__sliderItem {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
+
+  &__info {
+    margin-left: 30px;
+    height: 100%;
+  }
+
+  &__infoHead {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__infoItem {
+
+  }
+
+  &__infoLabel {
+    margin-bottom: 10px;
+  }
+
+  &__infoBlock {
+    text-align: center;
+    color: #F5F5F5;
+    padding: 16px 22px;
+    border-radius: 5px;
+    background: #242424;
+  }
+
+  &__infoFull {
+    margin-top: 40px;
+    flex: 1 1 100%;
+  }
+
+  &__row {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__column {
+    flex: 0 1 33%;
+
+  }
+
+  &__title {
+    margin-bottom: 7px;
+  }
+
+  &__subTitle {
+    font-weight: 300;
+    line-height: 150%
+  }
+
+  &__footer {
+    display: flex;
+    border-radius: 5px;
+    background: #FAFAFA;
+    padding: 22px 27px;
+  } 
+
+  &__contact {
+    flex: 0 0 33%;
+  }
+
+  &__contactTitle {
+    margin-bottom: 6px;
+  }
+
+  &__contactSubTitle {
+    font-weight: 300;
+  }
+}
+
+
+
+
+
+
+

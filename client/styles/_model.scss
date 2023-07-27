@@ -45,11 +45,42 @@ body{
   
 }
 
-.lockedScroll {
-   padding-right: 17px;
-   overflow: hidden;
+
+.asddf .slick-slide.slick-active.slick-current {
+   border: 6px solid #0036FF;
  }
+
+ .asddf .slick-slider .slick-list .slick-track .slick-slide   {
+
+ }
+
+
+ .asddf {
  
+ }
+
+ .slick-prev, .slick-next {
+   font-size: 0;
+   line-height: 0;
+   position: absolute;
+   top: 114%;
+   display: block;
+   width: 20px;
+   height: 20px;
+   padding: 0;
+   transform: translate(0, -50%);
+   cursor: pointer;
+   color: transparent;
+   border: none;
+   outline: none;
+
+ }
+
+
+
+
+ 
+
 
 
 

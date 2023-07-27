@@ -5,7 +5,7 @@ import styles from './AboutPlatform.module.scss'
 const AboutPlatform = () => {
   return ( 
     <Layout>
-        AboutPlatform
+        О платформе
     </Layout>
    );
 }
