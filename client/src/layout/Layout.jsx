@@ -16,7 +16,7 @@ const Layout = ({children}) => {
   const [activeHeader, setActiveHeader] = useState(true);
 
   /* ['Заказчик', 'Исполнитель', 'Гость'] */
-  const userRoll = 'Гость';
+  const userRoll = 'Заказчик';
 
   return ( 
     <>
@@ -43,7 +43,7 @@ const Layout = ({children}) => {
       <main  className="page profile" style={{backgroundColor: '#f4f4f4',}}>
        
         {
-          userRoll === 'Клиент'
+          userRoll === 'Заказчик'
           ?
           <NavigationClient active={activeHeader} setActive={setActiveHeader}/>
           :

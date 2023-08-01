@@ -3,6 +3,9 @@ import Layout from "@/src/layout/Layout";
 import styles from './CheckTz.module.scss'
 import icon from 'public/icon/iconTz.png'
 
+
+import ModalImage from '@/src/layout/Modal/ModalImage/ModalImage'
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,15 +14,15 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Images from "./dataImgSlider";
 
-import { useState, useEffect } from "react";
-
+import { useState, useEffect} from "react";
+import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
 
 const CheckTz = () => {
-
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
+
   useEffect(() => {
     setNav1(slider1);
     setNav2(slider2);
@@ -27,26 +30,55 @@ const CheckTz = () => {
 
   const settings = {
     infinite: true,
-
     slidesToShow: 1,
     slidesToScroll: 1,
     lazyLoad: true,
     focusOnSelect: true,
-    adaptiveHeight: true
-
+    adaptiveHeight: true,
+    arrows: false,
+    
   };
   const thumbnailSettings = {
+    infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     asNavFor: ".slider-for",
     swipeToSlide: true,
     focusOnSelect: true,
-  };
 
+    nextArrow: (
+      <div>
+        <div className="next-slick-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.70014 12C0.879331 12 1.05852 11.9347 1.19501 11.8047L6.79474 6.47141C7.06842 6.21075 7.06842 5.78942 6.79474 5.52876L1.19501 0.195497C0.921329 -0.0651658 0.478951 -0.0651658 0.205265 0.195497C-0.0684218 0.45616 -0.0684218 0.877488 0.205265 1.13815L5.31011 6.00008L0.205265 10.862C-0.0684218 11.1227 -0.0684218 11.544 0.205265 11.8047C0.341758 11.9347 0.520949 12 0.70014 12Z" fill="#242424"/>
+          </svg>
+        </div>
+      </div>
+    ),
+    prevArrow: (
+      <div>
+        <div className="prev-slick-arrow"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.29986 12C6.12067 12 5.94148 11.9347 5.80499 11.8047L0.205265 6.47141C-0.0684216 6.21075 -0.0684216 5.78942 0.205265 5.52876L5.80499 0.195497C6.07867 -0.0651658 6.52105 -0.0651658 6.79474 0.195497C7.06842 0.45616 7.06842 0.877488 6.79474 1.13815L1.68989 6.00008L6.79474 10.862C7.06842 11.1227 7.06842 11.544 6.79474 11.8047C6.65824 11.9347 6.47905 12 6.29986 12Z" fill="#242424"/>
+          </svg>
+        </div>
+      </div>
+    ),
+    responsive: [
+      {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+      },
+     ]
+  };
+  
   return ( 
     <Layout>
       <div className={styles.checktz}>
-        <div className={styles.checktz__title}>Просмотр технического задания</div>
+        <TitleProfile>Просмотр технического задания</TitleProfile>
         <div className={styles.checktz__head}>
           <div className={styles.checktz__ico}>
               <Image 
@@ -55,7 +87,7 @@ const CheckTz = () => {
                 width={60} 
                 height={60}
               />
-            </div>
+          </div>
           <div className={styles.checktz__content}>
             <div className={styles.checktz__info}>
               <div className={styles.checktz__name}>Пошив платья для официантов</div>
@@ -90,7 +122,6 @@ const CheckTz = () => {
           <div className={styles.checktz__dateInfo}>Опубликовано: 29 июня 2022 г. </div>
           <div className={styles.checktz__dateEdit}>(изменено 30 июня 2022 г.)</div>
         </div>
-
         <div className={styles.card}>
           <div className={styles.card__body}>
             <div className={styles.card__head}>
@@ -102,33 +133,32 @@ const CheckTz = () => {
             </div>
             <div className={styles.card__content}>
               <div className={styles.card__slider}>
-              <Slider
-            {...settings}
-            asNavFor={nav2}
-            ref={(slider) => setSlider1(slider)}
-          >
-            {Images.map((item) => (
-              <div key={item.id}>
-                <img src={item.src} alt={item.alt} />
+                <Slider
+                    {...settings}
+                    asNavFor={nav2}
+                    ref={(slider) => setSlider1(slider)}
+                  >
+                  {Images.map((item) => (
+                    <div key={item.id} >
+                      <img src={item.src} alt={item.alt} className={styles.card__sliderImg} />
+                    </div>
+                  ))}
+                </Slider>
+                <div className="sliderBottom">
+                  <Slider
+                      {...thumbnailSettings}
+                      asNavFor={nav1}
+                      ref={(slider) => setSlider2(slider)}
+                      >
+                    {Images.map((item) => (
+                      <div key={item.id}>
+                        <img  src={item.src} alt={item.alt} className="bottomliderImg"/>
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
               </div>
-            ))}
-          </Slider>
-      
-
-       <div className="asddf">
-       <Slider
-          {...thumbnailSettings}
-          asNavFor={nav1}
-          ref={(slider) => setSlider2(slider)}
-          >
-          {Images.map((item) => (
-            <div key={item.id}>
-              <img src={item.src} alt={item.alt}  />
-            </div>
-          ))}
-        </Slider>
-       </div>
-        </div>
+        
               <div className={styles.card__info}>
                 <div className={styles.card__infoHead}>
                   <div className={styles.card__infoItem}>
@@ -195,11 +225,9 @@ const CheckTz = () => {
                   </div>
                 </div>
               </div>
-            
-         
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
       </div>
     </Layout>
    );

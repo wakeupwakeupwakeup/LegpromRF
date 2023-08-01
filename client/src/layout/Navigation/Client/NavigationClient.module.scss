@@ -1,11 +1,13 @@
 .nav {
   &__head {
     min-height: 100%;
+    color: inherit;
   }
 
   &__title {
     text-align: center;
     font-size: 16px;
+    
   }
 
   &__buttons {

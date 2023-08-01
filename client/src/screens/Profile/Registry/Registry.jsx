@@ -4,6 +4,7 @@ import RegistryCard from "@/src/components/RegistryCard/RegistryCard";
 import styles from './Registry.module.scss'
 
 import Link from "next/link";
+import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
 
 
 
@@ -11,7 +12,7 @@ const Registry = () => {
   return ( 
     <Layout>
       <div className={styles.registry}>
-        <h3 className={styles.registry__title}>Реестр заказов</h3>
+        <TitleProfile>Реестр заказов</TitleProfile>
         <div className={styles.registry__head}>
           <div className={styles.registry__list}>
             <div className={styles.registry__item}><Link href="/profile/registry/">Все заказы</Link></div>

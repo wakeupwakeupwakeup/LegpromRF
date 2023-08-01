@@ -8,10 +8,19 @@ import Link from 'next/link'
 import Image from 'next/image';
 
 import ad from 'public/icon/adPro.svg';
-
+import { useRouter } from 'next/router'
 const NavigationClient = (props) => {
 
-  const tarif = 'Base'
+  const tarif = 'Pro'
+
+  const router = useRouter()
+  const pathname = router.pathname.split('/')
+
+  const active = () => {
+    if (pathname[2] == 'registry' || pathname[2] == 'home') {
+      return true
+    }
+  }
 
   return ( 
     <NavifationLayout {...props}>
@@ -20,10 +29,18 @@ const NavigationClient = (props) => {
         <HeaderNavigation title="Global IT" mail="ekb-invest103@yandex.ru" tarif={tarif}/>
       </div>
       <div className={styles.nav__buttons}>
+        <ButtonNavigation title="Главная" href="/profile/home" activeLink={pathname[2] == 'home' ? true : ''}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M5.2974 7.56134V13.0494" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9.03073 4.93524V13.0494" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M12.7035 10.4614V13.0494" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path fillRule="evenodd" clipRule="evenodd" d="M12.7488 1H5.25167C2.63834 1 1.00024 2.84967 1.00024 5.46813V12.5319C1.00024 15.1503 2.63072 17 5.25167 17H12.7488C15.3698 17 17.0002 15.1503 17.0002 12.5319V5.46813C17.0002 2.84967 15.3698 1 12.7488 1Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </ButtonNavigation>
         {
           tarif == 'Pro' 
           ? 
-          <ButtonNavigation title="Создать заказ" href="/">
+          <ButtonNavigation title="Создать заказ" href="/profile/createorder/" activeLink={pathname[2] == 'createorder' || pathname[2] == 'selection' ? true : ''}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
               <path fillRule="evenodd" clipRule="evenodd" d="M10.1358 1.00977H4.34032C2.54645 1.00977 1 2.46386 1 4.25861V13.7107C1 15.6065 2.44451 16.9996 4.34032 16.9996H11.2998C13.0945 16.9996 14.5495 15.5054 14.5495 13.7107V5.60641L10.1358 1.00977Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M9.90723 1V3.53443C9.90723 4.77158 10.9083 5.77525 12.1454 5.77786C13.292 5.78048 14.4655 5.78135 14.5448 5.77612" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -32,7 +49,7 @@ const NavigationClient = (props) => {
             </svg>
           </ButtonNavigation> 
           :
-          <ButtonNavigation title="Заказать пошив" href="/">
+          <ButtonNavigation title="Заказать пошив" href="/" activeLink={pathname[2] == 'createorder' || pathname[2] == 'selection' ? true : ''}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
               <path fillRule="evenodd" clipRule="evenodd" d="M10.1358 1.00977H4.34032C2.54645 1.00977 1 2.46386 1 4.25861V13.7107C1 15.6065 2.44451 16.9996 4.34032 16.9996H11.2998C13.0945 16.9996 14.5495 15.5054 14.5495 13.7107V5.60641L10.1358 1.00977Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M9.90723 1V3.53443C9.90723 4.77158 10.9083 5.77525 12.1454 5.77786C13.292 5.78048 14.4655 5.78135 14.5448 5.77612" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>

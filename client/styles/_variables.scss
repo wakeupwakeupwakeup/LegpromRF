@@ -22,6 +22,10 @@ $fontSize: 14px;
   background: linear-gradient(135deg, #FF8A00 0%, #D47300 100%, #D47300 100%), #EDEDED;
 }
 
+@mixin colorGradient () {
+  color: linear-gradient(135deg, #FF8A00 0%, #D47300 100%, #D47300 100%), #EDEDED;
+}
+
 
 
 

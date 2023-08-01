@@ -1,17 +1,7 @@
 @import '@/styles/_variables.scss';
 
 .registry {
-
-  &__title {
-    font-size: 16px;
-    margin-top: 36px;
-    margin-bottom: 15px;
-
-    @media (max-width: 1300px) {
-      margin-top: 80px;
-    }
-  }
-
+  
   &__head {
     display: flex;
     align-items: center;

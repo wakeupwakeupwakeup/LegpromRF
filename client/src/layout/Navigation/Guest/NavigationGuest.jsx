@@ -15,13 +15,6 @@ const NavigationGuest = (props) => {
   const router = useRouter()
   const pathname = router.pathname.split('/')
 
-  console.log(pathname)
-
-  const active = () => {
-    if (pathname[2] == 'registry' || pathname[2] == 'home') {
-      return true
-    }
-  }
 
   return ( 
     <NavifationLayout {...props}>
