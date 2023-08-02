@@ -58,7 +58,7 @@ const NavigationClient = (props) => {
             </svg>
           </ButtonNavigation>
         }
-          <ButtonNavigation title="История заказов" href="/">
+          <ButtonNavigation title="Управление заказами" href="/profile/orders/" activeLink={pathname[2] == 'orders' ? true : ''}>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
               <circle cx="9" cy="9" r="8" stroke="#242424" strokeWidth="1.3"/>
               <path d="M8.5 5.5V9.5L12 11.5" stroke="#242424" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
