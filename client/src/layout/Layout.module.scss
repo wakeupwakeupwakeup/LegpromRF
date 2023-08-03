@@ -107,6 +107,7 @@ display: none;
   z-index: 10000 !important;
  
   color: #FAFAFA;
+  
   &__containerProfile {
 
   }
@@ -164,6 +165,7 @@ display: none;
     &_text{
       font-size: 12px;
       font-weight: 300;
+      
       @media (max-width: 540px) {
         font-size: 11px;
         margin-bottom: 2px

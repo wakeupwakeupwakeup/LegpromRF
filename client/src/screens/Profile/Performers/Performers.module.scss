@@ -1,0 +1,199 @@
+.performers {
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 36px;
+
+    h2 {
+      font-size: 16px;
+      margin-right: 5px;
+      
+    }
+
+    @media (max-width: 1300px) {
+      margin-top: 80px;
+    }
+  } 
+
+  &__number {
+    color: #979797;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & > * {
+      flex: 1 1 31%;
+
+      @media (max-width: 800px) {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  
+  &__info {
+    display: flex;
+    gap: 100px;
+    margin-top: 30px;
+    
+    span {
+      font-size: 16px;
+    }
+  }
+
+  &__infoButton {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__infoItem {
+    a {
+      border-radius: 5px;
+      background: #EDEDED;
+      font-weight: 300;
+      font-size: 16px;
+      color: #000;
+      padding: 7px 45px;
+
+      &:hover {
+        background: #e2e1e1;
+      }
+    }
+  }
+
+  &__company {
+    margin-top: 30px;
+  }
+
+  &__body {
+    padding: 22px;
+    border-radius: 7px;
+    border: 0.8px solid #DADADA;
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__companyInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background: #E4E4E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__companyContent {
+
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 7px;
+
+    span {
+      margin-right: 6px;
+    }
+  }
+
+  &__companyButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__companyItem {
+    a {
+      border-radius: 5.231px;
+      background: #EDEDED;
+      padding: 8px 22px;
+      font-weight: 300;
+      line-height: 19.615px; /* 122.596% */
+      font-size: 16px;
+
+      &:hover {
+        background: #dedede;
+      }
+    }
+
+    &_red {
+      color: #FF0A00;
+    }
+
+    &_blue {
+      background: #0036FF !important;
+      padding: 8px 42px !important;
+      color: #FFF;
+
+      &:hover {
+        background: #5177ff !important;      }
+    }
+  }
+
+  &__status {
+    margin-top: 20px;
+  }
+
+  &__statusTitle {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  &__statusList {
+    display: flex;
+    align-items: center;
+  }
+
+  &__statusItem {
+    position: relative;
+    &::before {
+      content: 'sadfsdf';
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__statusBody {
+    padding: 20px;
+    border-radius: 7px;
+    border: 0.8px solid #DADADA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__statusIcon {
+
+  }
+
+  &__statusDesc {
+    font-weight: 300;
+    color: #000;
+    line-height: 18px; /* 128.571% */
+    width: 80px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
