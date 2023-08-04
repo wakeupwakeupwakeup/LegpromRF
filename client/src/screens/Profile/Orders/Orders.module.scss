@@ -1,72 +1,33 @@
 .orders {
 
   &__header {
-
     margin-bottom: 30px;
-    gap: 10px;
+    gap: 50px;
 
     @media (min-width: 1450px) {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
-
   }
 
-    &__list {
+  &__list {
     display: flex;
     align-items: center;
+    flex: 1 1 30%;
+    gap: 20px;
 
-
-    @media (max-width: 1350px) {
-      margin-bottom: 15px;
-    }
-  }
-
-  &__item {
-    display: flex;
-    gap: 15px;
-
-    @media (max-width: 1450px) {
-      flex: 1 1 50%;
+    & > * {
+      flex: 1 1 100%;
     }
 
-    a {
-      display: flex;
-      color: #FFF;
-      font-size: 16px;
-      border-radius: 7px;
-      background-color: #242424;
-      padding: 13px;
-      width: 370px;
-
-      @media (max-width: 1450px) {
-        width: 100%;
-      }
-
-  
-
-      &:hover {
-        background-color: #787777;
-      }
-
-
-     
+    @media (max-width:1437px) {
+      margin-bottom: 20px;
     }
 
-    &_archive {
-
-      a {
-        background-color: rgba(250, 250, 250, 0.80);
-        backdrop-filter: blur(25px);
-        color: inherit;
-        margin-left: 10px;
-        &:hover {
-          background-color: #565555;
-          color: #ffffff;
-        }
-      }
+    @media (max-width: 800px) {
+      flex-wrap: wrap;
+      flex: 1 1 100%;
     }
   }
 
@@ -74,6 +35,7 @@
     display: flex;
     margin: 0 -15px;
     flex-wrap: wrap;
+    gap: 10px;
   }
 
   &__add {
@@ -87,13 +49,12 @@
   }
 
   &__addBody {
-    padding: 37px 30px;
+    padding: 45px;
     border-radius: 7px;
     background: #FAFAFA;
     position: relative;
     border: 1px solid transparent;
     margin-top: 15px;
-
 
     &:hover {
       background: #f0efef;

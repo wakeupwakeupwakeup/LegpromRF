@@ -43,29 +43,29 @@ const HeaderLanding = () => {
             >
                 <span></span>
             </div>
-        </div>
-        <div className={activeMenu ? [styles.header__content, styles.header__menuActive].join(' ') : styles.header__content}>
-            <div className={styles.header__menu}>
-                <nav className={styles.header__nav}>
-                  <ul className={styles.header__list}>
-                    {links.map((link, index) => {
-                      return (
-                        <li className={styles.header__item} key={index}>
-                          <Link  href={link.href} className={styles.header__link}>{link.nameViews}</Link>
-                        </li>
-                      )})}
-                  </ul>
-                </nav>
-            </div>
-            <div className={styles.header__button}>
-              <div className={styles.header__question}>
-                <Link href="/">Задать вопрос</Link>
+          </div>
+          <div className={activeMenu ? [styles.header__content, styles.header__menuActive].join(' ') : styles.header__content}>
+              <div className={styles.header__menu}>
+                  <nav className={styles.header__nav}>
+                    <ul className={styles.header__list}>
+                      {links.map((link, index) => {
+                        return (
+                          <li className={styles.header__item} key={index}>
+                            <Link  href={link.href} className={styles.header__link}>{link.nameViews}</Link>
+                          </li>
+                        )})}
+                    </ul>
+                  </nav>
               </div>
-              <div className={styles.header__login} onClick={() => setModalActive(true)}>Войти</div>
-              <ModalLogin active={modalActive} setActive={setModalActive}>
-              </ModalLogin>
-            </div>
-        </div>
+              <div className={styles.header__button}>
+                <div className={styles.header__question}>
+                  <Link href="/">Задать вопрос</Link>
+                </div>
+                <div className={styles.header__login} onClick={() => setModalActive(true)}>Войти</div>
+                <ModalLogin active={modalActive} setActive={setModalActive}>
+                </ModalLogin>
+              </div>
+          </div>
         </div>
       </div>
     </header>

@@ -1,6 +1,4 @@
-
 import styles from './Performer.module.scss'
-
 
 import NavifationLayout from '../NavigationLayout/NavifationLayout';
 import HeaderNavigation from '@/src/UI/HeaderNavigation/HeaderNavigation';
@@ -25,7 +23,8 @@ const NavigationPerformer = (props) => {
       <div className={styles.nav__head}>
         <h2 className={styles.nav__title}>Кабинет</h2>
         <HeaderNavigation title="Global IT" mail="ekb-invest103@yandex.ru" tarif={tarif}/>
-       </div>
+      </div>
+
       <div className={styles.nav__buttons}>
         <div onClick={() => {
             if (activeButton2 || activeButton3) {
@@ -179,18 +178,20 @@ const NavigationPerformer = (props) => {
         </div>
     
       </div>
+
       <div className={styles.nav__footer}>
-          {
-            tarif !== 'Pro' ? 
+        {
+          tarif !== 'Pro' 
+          ? 
             <Link href="/">
               <Image 
-                  src={ad} 
-                  alt="LegpromRF"  
-                  width={257} 
-                  height={212}
-                />
+                src={ad} 
+                alt="LegpromRF"  
+                width={257} 
+                height={212}
+              />
             </Link>
-            :
+          :
             null
           }
           <div className={styles.nav__referal}>

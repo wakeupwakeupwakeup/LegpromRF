@@ -1,7 +1,7 @@
 import Layout from "@/src/layout/Layout";
 
 import styles from './Applications.module.scss'
-import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
+import HeaderProfile from "@/src/components/HeaderProfile/HeaderProfile";
 import Link from "next/link";
 
 const AboutOrder = () => {
@@ -12,26 +12,13 @@ const AboutOrder = () => {
           <h2>Пошив платья для официантов</h2>
           <div className={styles.aboutOrder__number}>№24500968</div>
         </div>
+
         <div className={styles.aboutOrder__header}>
-          <div className={[styles.aboutOrder__item, styles.aboutOrder__item_active].join(' ')}>
-            <Link href="/">
-              <span>Поставка материала</span>
-              <div className={[styles.aboutOrder__itemNumber, styles.aboutOrder__itemNumber_active].join(' ')}>1</div>
-            </Link>
-          </div>
-          <div className={styles.aboutOrder__item}>
-            <Link href="/">
-              <span>Пошив изделия</span>
-              <div className={styles.aboutOrder__itemNumber}>2</div>
-            </Link>
-          </div>
-          <div className={styles.aboutOrder__item}>
-            <Link href="/">
-              <span>Сдача заказа</span>
-              <div className={styles.aboutOrder__itemNumber}>3</div>
-            </Link>
-          </div>
+          <HeaderProfile title="Поставка материала" number="1" href='/' active={true}/>
+          <HeaderProfile title="Пошив изделия" number="2" href='/' active={false}/>
+          <HeaderProfile title="Сдача заказа" number="3" href='/' active={false}/>
         </div>
+
         <div className={styles.aboutOrder__contol}>
         <div className={styles.aboutOrder__applications}>
           <span>Отправлено заявок 54:</span>

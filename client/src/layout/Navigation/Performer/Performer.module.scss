@@ -2,7 +2,6 @@
 
   &__head {
     min-height: 100%;
-
   }
 
   &__title {
@@ -12,12 +11,9 @@
 
   &__buttons {
     flex: 1 1 100%;
-    
   }
 
-  &__item {
-
-  }
+  &__item {}
 
   &__buttonInfo {
     height: 92vh;
@@ -49,7 +45,6 @@
         margin-right: 7px;
       }
     }
-
   }
 
   &__buttonActive {
@@ -62,10 +57,7 @@
     }
   }
 
-  &__footer {
-    
-
-  }
+  &__footer {}
 
   &__referal {
     margin-top: 15px;

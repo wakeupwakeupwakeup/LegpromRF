@@ -1,9 +1,14 @@
 import Layout from "@/src/layout/Layout";
+
 import styles from './Orders.module.scss'
+
 import Status from "@/src/components/Status/Status";
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
-import Link from "next/link";
 import OrdersCard from "@/src/components/OrdersCard/OrdersCard";
+import HeaderProfile from "@/src/components/HeaderProfile/HeaderProfile";
+
+import Link from "next/link";
+
 const Orders = () => {
   return ( 
     <Layout>
@@ -11,8 +16,8 @@ const Orders = () => {
         <TitleProfile>Статусы заказов</TitleProfile>
         <div className={styles.orders__header}>
           <div className={styles.orders__list}>
-            <div className={styles.orders__item}><Link href="/profile/orders/">Все заказы</Link></div>
-            <div className={[styles.orders__item, styles.orders__item_archive].join(' ')}><Link href="/profile/orders/">Архивные заказы</Link></div>
+            <HeaderProfile title="Все заказы" number="1" href='/' active={true}/>
+            <HeaderProfile title="Архивные заказы" number="2" href='/' active={false}/>
           </div>
           <div className={styles.orders__status}><Status /></div>
         </div>

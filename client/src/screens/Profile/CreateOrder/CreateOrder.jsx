@@ -1,3 +1,4 @@
+import HeaderProfile from '@/src/components/HeaderProfile/HeaderProfile';
 import styles from './CreateOrder.module.scss'
 
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
@@ -147,32 +148,14 @@ const CreateOrder = () => {
     <Layout>
       <div className={styles.createOrder}>
         <TitleProfile>Техническое задание</TitleProfile>
+      
         <div className={styles.createOrder__header}>
-          <div className={[styles.createOrder__item, styles.createOrder__item_active].join(' ')}>
-            <Link href="/">
-              <span>Характеристики</span>
-              <div className={[styles.createOrder__itemNumber, styles.createOrder__itemNumber_active].join(' ')}>1</div>
-            </Link>
-          </div>
-          <div className={styles.createOrder__item}>
-            <Link href="/">
-              <span>Тип изделия</span>
-              <div className={styles.createOrder__itemNumber}>2</div>
-            </Link>
-          </div>
-          <div className={styles.createOrder__item}>
-            <Link href="/">
-              <span>Документация</span>
-              <div className={styles.createOrder__itemNumber}>3</div>
-            </Link>
-          </div>
-          <div className={styles.createOrder__item}>
-            <Link href="/">
-              <span>Размеры</span>
-              <div className={styles.createOrder__itemNumber}>4</div>
-            </Link>
-          </div>
+          <HeaderProfile title="Характеристики" number="1" href='/' active={true}/>
+          <HeaderProfile title="Тип изделия" number="2" href='/' active={false}/>
+          <HeaderProfile title="Документация" number="3" href='/' active={false}/>
+          <HeaderProfile title="Размеры" number="4" href='/' active={false}/>
         </div>
+
         <div className={styles.createOrder__order}>
           <div className={styles.createOrder__type}>
             <div className={styles.createOrder__typeTitle}>Вид пошива</div>

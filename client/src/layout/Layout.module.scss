@@ -1,8 +1,8 @@
 @import '@/styles/_variables.scss';
 
 .header {
+  display: none;
 
-display: none;
   @media (max-width: 1300px) {
     display: block;
     position: fixed;
@@ -17,10 +17,9 @@ display: none;
       align-items: center;
       justify-content: space-between;
       padding: 12px 0;
-      
     }
+
     &__logo {
-      
       justify-content: center;
     }
 
@@ -31,8 +30,6 @@ display: none;
       width: 30px;
       height: 20px;
       cursor: pointer;
-      
-  
       
       & span,
       &::before,
@@ -98,31 +95,22 @@ display: none;
 }
 
 .footer {
-
   background: #1D1C1C;
   position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
   z-index: 10000 !important;
- 
   color: #FAFAFA;
   
-  &__containerProfile {
-
-  }
+  &__containerProfile {}
 
   &__wrapper {
-
-
     @media (min-width: 1300px) {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
-   
-  
   }
 
   &__logo {
@@ -135,8 +123,6 @@ display: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
   }
 
   &__balance {
@@ -235,6 +221,5 @@ display: none;
       margin-right: 20px;
     }
   }
-
 }
 

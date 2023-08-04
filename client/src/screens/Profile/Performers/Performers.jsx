@@ -7,7 +7,9 @@ import Raiting from "@/src/components/Raiting/Raiting";
 
 import Image from "next/image";
 
-import status from '/public/status.png'
+import statusActive from '/public/statusActive.png'
+import statusIsNotActive from '/public/statusIsNotActive.png'
+import arrow from '/public/arrow.png'
 
 const Performers = () => {
   return ( 
@@ -23,7 +25,7 @@ const Performers = () => {
           <HeaderProfile title="Сдача заказа" number="3" href='/' active={false}/>
         </div>
         <div className={styles.performers__info}>
-          <span>1 исполнитель:</span>
+          <span>В работе над поставкой материала 1 исполнитель:</span>
           <div className={styles.performers__infoButton}>
             <div className={styles.performers__infoItem}><Link href="/">Нанять еще</Link></div>
             <div className={styles.performers__infoItem}><Link href="/">Подобрать еще</Link></div>
@@ -67,12 +69,107 @@ const Performers = () => {
               <div className={styles.performers__statusBody}>
                 <div className={styles.performers__statusIcon}>
                   <Image 
-                    src={status}
+                    src={statusActive}
                     width={150}
                     height={150}
                     />
                 </div>
-                <p className={styles.performers__statusDesc}>Подписание договора</p>
+                <p className={styles.performers__statusDesc}>Подписание <br /> договора</p>
+              </div>
+            </div>
+            <div className={styles.performers__statusArrow}>
+              <Image 
+                src={arrow}
+                width={67}
+                height={10}
+              />
+            </div>
+            <div className={styles.performers__statusItem}>
+              <div className={styles.performers__statusBody}>
+                <div className={styles.performers__statusIcon}>
+                  <Image 
+                    src={statusIsNotActive}
+                    width={150}
+                    height={150}
+                    />
+                </div>
+                <p className={styles.performers__statusDesc}>Создание лекал</p>
+              </div>
+            </div>
+            <div className={styles.performers__statusArrow}>
+              <Image 
+                src={arrow}
+                width={67}
+                height={10}
+              />
+            </div>
+            <div className={styles.performers__statusItem}>
+              <div className={styles.performers__statusBody}>
+                <div className={styles.performers__statusIcon}>
+                  <Image 
+                    src={statusIsNotActive}
+                    width={150}
+                    height={150}
+                    />
+                </div>
+                <p className={styles.performers__statusDesc}>Сборка поссылки</p>
+              </div>
+            </div>
+            <div className={styles.performers__statusArrow}>
+              <Image 
+                src={arrow}
+                width={67}
+                height={10}
+              />
+            </div>
+            <div className={styles.performers__statusItem}>
+              <div className={styles.performers__statusBody}>
+                <div className={styles.performers__statusIcon}>
+                  <Image 
+                    src={statusIsNotActive}
+                    width={150}
+                    height={150}
+                    />
+                </div>
+                <p className={styles.performers__statusDesc}>Доставка до цеха</p>
+              </div>
+            </div>
+            <div className={styles.performers__statusArrow}>
+              <Image 
+                src={arrow}
+                width={67}
+                height={10}
+              />
+            </div>
+            <div className={styles.performers__statusItem}>
+              <div className={styles.performers__statusBody}>
+                <div className={styles.performers__statusIcon}>
+                  <Image 
+                    src={statusIsNotActive}
+                    width={150}
+                    height={150}
+                    />
+                </div>
+                <p className={styles.performers__statusDesc}>Создание материала</p>
+              </div>
+            </div>
+            <div className={styles.performers__statusArrow}>
+              <Image 
+                src={arrow}
+                width={67}
+                height={10}
+              />
+            </div>
+            <div className={styles.performers__statusItem}>
+              <div className={styles.performers__statusBody}>
+                <div className={styles.performers__statusIcon}>
+                  <Image 
+                    src={statusIsNotActive}
+                    width={150}
+                    height={150}
+                    />
+                </div>
+                <p className={styles.performers__statusDesc}>Сдача в пошив</p>
               </div>
             </div>
           </div>

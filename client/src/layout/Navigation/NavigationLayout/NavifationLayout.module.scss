@@ -11,31 +11,28 @@
   transform: translate(-100%);
 
  @media (max-width: 1300px) {
-  &__bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 92vh;
-    width: 100vw;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 100;
-    opacity: 0;
-    pointer-events: none;
-    transition: all .5s ease 0s;
-  
-     &_active {
-      opacity: 1;
-      pointer-events: all;
-     }
+    &__bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 92vh;
+      width: 100vw;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .5s ease 0s;
+    
+      &_active {
+        opacity: 1;
+        pointer-events: all;
+      }
     }
  }
 
   &__active {
-
     transform: translate(0%);
-
   }
-
 
   &__content {
     min-height: 100%;
@@ -45,23 +42,3 @@
     transition: all .5s ease 0s;
   }
 }
-
-@keyframes fadeInFromNone {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOutFromBlock {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-

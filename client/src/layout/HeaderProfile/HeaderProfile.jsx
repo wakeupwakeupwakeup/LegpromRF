@@ -6,7 +6,6 @@ import Logo from 'public/logo.png'
 
 const HeaderProfile = ({active}) => {
 
-  
   return ( 
     <header className={styles.header}>
       <div className="header__profileContainer">
@@ -22,8 +21,8 @@ const HeaderProfile = ({active}) => {
             </Link>
           </div>
           <div className={active ? [styles.header__burger, styles.header__menuActive].join(' ') : styles.header__burger}>
-                <span></span>
-            </div>
+            <span></span>
+          </div>
         </div>
       </div>
     </header>

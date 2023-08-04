@@ -23,7 +23,6 @@
     font-weight: 300;
   }
 
-
   &__header {
     display: flex;
     align-items: center;
@@ -42,20 +41,41 @@
   
   &__info {
     display: flex;
-    gap: 100px;
+    gap: 20px;
     margin-top: 30px;
     
     span {
       font-size: 16px;
+    }
+
+    @media (max-width: 865px) {
+      flex-wrap: wrap;
+      gap: 20px;
     }
   }
 
   &__infoButton {
     display: flex;
     gap: 10px;
+
+    @media (max-width: 865px) {
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+     }
   }
 
   &__infoItem {
+
+    display: flex;
+
+    @media (max-width: 865px) {
+      flex: 1 1 50%;
+     }
+
+     @media (max-width: 600px) {
+      flex: 1 1 100%;
+     }
+
     a {
       border-radius: 5px;
       background: #EDEDED;
@@ -67,11 +87,22 @@
       &:hover {
         background: #e2e1e1;
       }
+
+      @media (max-width: 865px) {
+       flex: 1 1 50%;
+       text-align: center;
+       padding: 12px 45px;
+      }
+
+      @media (max-width: 600px) {
+        flex: 1 1 100%;
+       }
     }
   }
 
   &__company {
     margin-top: 30px;
+
   }
 
   &__body {
@@ -79,15 +110,27 @@
     border-radius: 7px;
     border: 0.8px solid #DADADA;
     background: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   
+
+    @media (min-width: 1150px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__companyInfo {
     display: flex;
     align-items: center;
     gap: 15px;
+
+    @media (max-width: 1150px) {
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: 665px) {
+      justify-content: center;
+    }
   }
 
   &__logo {
@@ -110,18 +153,41 @@
     font-size: 16px;
     margin-bottom: 7px;
 
+  
+
     span {
       margin-right: 6px;
     }
+
+
   }
 
   &__companyButton {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+
+    @media (max-width: 1150px) {
+      justify-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+
+    }
   }
 
   &__companyItem {
+
+    display: flex;
+
+    @media (max-width: 1150px) {
+      flex: 1 1 25%;
+      
+    }
+
+    @media (max-width: 665px) {
+      flex: 1 1 100%;
+    }
+
     a {
       border-radius: 5.231px;
       background: #EDEDED;
@@ -133,8 +199,20 @@
       &:hover {
         background: #dedede;
       }
-    }
 
+      @media (max-width: 1150px) {
+        flex: 1 1 25%;
+        padding: 18px 22px;
+        text-align: center;
+       
+      }
+
+      @media (max-width: 665px) {
+        flex: 1 1 100%;
+        padding: 12px 22px;
+      }
+    }
+   
     &_red {
       color: #FF0A00;
     }
@@ -144,8 +222,13 @@
       padding: 8px 42px !important;
       color: #FFF;
 
+      @media (max-width: 665px) {
+        padding: 12px 22px !important;
+      }
+
       &:hover {
-        background: #5177ff !important;      }
+        background: #5177ff !important;    
+      }
     }
   }
 
@@ -161,20 +244,57 @@
 
   &__statusList {
     display: flex;
-    align-items: center;
+   flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+
+    @media (min-width: 1150px) {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-direction: row;
+    }
+    
   }
 
   &__statusItem {
     position: relative;
-    &::before {
-      content: 'sadfsdf';
-      position: absolute;
-      top: 0;
-      right: 0;
+ 
+
+
+    @media (max-width: 1150px) {
+      display: flex;
+      justify-content: center;
+      flex: 0 1 50%
     }
+ 
+    /*
+    &:not(:last-child):before {
+      content: "";
+      position: absolute;
+      right: -54%;
+      top: 50%;
+      width: 100px;
+      height: 10px;
+      background-image: url('/arrow.png') ;
+      background-repeat: no-repeat;
+    }*/
+  }
+
+  &__statusArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    @media (max-width: 1150px) {
+      transform: rotate(90deg);
+    }
+    
   }
 
   &__statusBody {
+    height: 100%;
     padding: 20px;
     border-radius: 7px;
     border: 0.8px solid #DADADA;
@@ -182,6 +302,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1150px) {
+      padding: 60px;
+    }
   }
 
   &__statusIcon {
@@ -191,9 +315,13 @@
   &__statusDesc {
     font-weight: 300;
     color: #000;
-    line-height: 18px; /* 128.571% */
-    width: 80px;
+    line-height: 140.571%; 
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 20px;
+
+    @media (max-width: 1150px) {
+      font-size: 16px;
+    }
   }
 }
