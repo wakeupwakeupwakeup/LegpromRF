@@ -29,7 +29,10 @@
 
   &__linkActive {
     
-    width: 110%;
+    @media (min-width:700px) {
+      width: 110%;
+    }
+    
     background-color:$blue;
     color: #fff;
 

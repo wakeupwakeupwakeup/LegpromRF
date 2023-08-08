@@ -89,7 +89,10 @@ const NavigationClient = (props) => {
               pathname[2] == 'orders' ||
               pathname[2] == 'applications' || 
               pathname[2] == 'order' ||
-              pathname[2] == 'performers'  
+              pathname[2] == 'performers' || 
+              pathname[2] == 'archive' ||
+              pathname[2] == 'tailoring' || 
+              pathname[2] == 'change'
               ? 
                 true
               : 

@@ -3,9 +3,6 @@ import Layout from "@/src/layout/Layout";
 import styles from './CheckTz.module.scss'
 import icon from 'public/icon/iconTz.png'
 
-
-import ModalImage from '@/src/layout/Modal/ModalImage/ModalImage'
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -16,6 +13,7 @@ import Images from "./dataImgSlider";
 
 import { useState, useEffect} from "react";
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
+import Head from "next/head";
 
 const CheckTz = () => {
   const [nav1, setNav1] = useState(null);
@@ -76,6 +74,10 @@ const CheckTz = () => {
   };
   
   return ( 
+    <>
+    <Head>
+      <title>Просмотр технического задания - LegpromRF</title>
+    </Head>
     <Layout>
       <div className={styles.checktz}>
         <TitleProfile>Просмотр технического задания</TitleProfile>
@@ -152,7 +154,7 @@ const CheckTz = () => {
                       >
                     {Images.map((item) => (
                       <div key={item.id}>
-                        <img  src={item.src} alt={item.alt} className="bottomliderImg"/>
+                        <img  src={item.src} alt={item.alt} />
                       </div>
                     ))}
                   </Slider>
@@ -230,6 +232,7 @@ const CheckTz = () => {
         </div>
       </div>
     </Layout>
+    </>
    );
 }
  

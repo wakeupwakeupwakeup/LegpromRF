@@ -8,16 +8,25 @@ import OrdersCard from "@/src/components/OrdersCard/OrdersCard";
 import HeaderProfile from "@/src/components/HeaderProfile/HeaderProfile";
 
 import Link from "next/link";
+import Head from "next/head";
+import { useState } from "react";
 
 const Orders = () => {
+
+  const [activeOrder, setActiveOrder] = useState(true)
+
   return ( 
+   <>
+    <Head>
+      <title>Мои заказы - LegpromRF</title>
+    </Head>
     <Layout>
       <div className={styles.orders}>
         <TitleProfile>Статусы заказов</TitleProfile>
         <div className={styles.orders__header}>
           <div className={styles.orders__list}>
-            <HeaderProfile title="Все заказы" number="1" href='/' active={true}/>
-            <HeaderProfile title="Архивные заказы" number="2" href='/' active={false}/>
+            <HeaderProfile title="Все заказы" number="1" href='/profile/orders' active={true}/>
+            <HeaderProfile title="Архивные заказы" number="2" href='/profile/archive' active={false}/>
           </div>
           <div className={styles.orders__status}><Status /></div>
         </div>
@@ -42,29 +51,30 @@ const Orders = () => {
         <OrdersCard 
           title="Пошив платья для официантов" 
           number="№24500968" 
-          href="/profile/order"
+          href={activeOrder ? '/profile/performers' : '/profile/applications'}
           status="В работе"
         />  
         <OrdersCard 
           title="Пошив платья для официантов" 
           number="№24500968" 
-          href="/profile/order"
+          href={activeOrder ? '/profile/performers' : '/profile/applications'}
           status="Закончен"
         />  
         <OrdersCard 
           title="Пошив платья для официантов" 
           number="№24500968" 
-          href="/profile/order"
+          href={activeOrder ? '/profile/performers' : '/profile/applications'}
           status="В работе"
         />  
         <OrdersCard 
           title="Пошив платья для официантов" 
           number="№24500968" 
-          href="/profile/order"
+          href={activeOrder ? '/profile/performers' : '/profile/applications'}
           status="Закончен"
         />  
       </div> 
     </Layout>
+   </>
    );
 }
  

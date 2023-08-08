@@ -3,9 +3,14 @@ import Layout from "@/src/layout/Layout";
 import styles from './HomeScreen.module.scss'
 
 import Link from "next/link";
+import Head from "next/head";
 
 const HomePage = () => {
   return ( 
+    <>
+    <Head>
+      <title>Добро пожаловать в LegpromRF</title>
+    </Head>
     <Layout>
       <div className={styles.home__header}>
         <p className={styles.home__welcome}>Добро пожаловать в</p>
@@ -386,6 +391,7 @@ const HomePage = () => {
       </div>
       
     </Layout>
+    </>
 
 
    );

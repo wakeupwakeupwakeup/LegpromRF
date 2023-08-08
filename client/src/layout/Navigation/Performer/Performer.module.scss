@@ -2,6 +2,7 @@
 
   &__head {
     min-height: 100%;
+ 
   }
 
   &__title {
@@ -41,8 +42,10 @@
       display: block;
       margin-bottom: 30px;
       font-size: 15px;
+      margin-top: 20px;
       span {
         margin-right: 7px;
+        
       }
     }
   }

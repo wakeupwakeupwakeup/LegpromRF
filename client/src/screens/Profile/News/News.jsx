@@ -1,13 +1,20 @@
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
 import Layout from "@/src/layout/Layout";
 
+import Head from "next/head";
+
 const News = () => {
   return ( 
-    <Layout>
-      <div>
-        <TitleProfile>Новости</TitleProfile>
-      </div>
-    </Layout>
+    <>
+      <Head>
+        <title>Новости - LegpromRF</title>
+      </Head>
+      <Layout>
+        <div>
+          <TitleProfile>Новости</TitleProfile>
+        </div>
+      </Layout>
+    </>
    );
 }
  

@@ -1,38 +1,27 @@
 import styles from './Layout.module.scss'
 
-import LogoHeader from 'public/logo.png'
-import LogoFooter from 'public/logoWhite.png'
+import LogoHeader from 'public/Logo/logo.png'
+import LogoFooter from 'public/Logo/logoWhite.png'
 
 import Image from "next/image";
 import Link from 'next/link';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import NavigationPerformer from './Navigation/Performer/NavigationPerformer'
 import NavigationClient from './Navigation/Client/NavigationClient';
 import NavigationGuest from './Navigation/Guest/NavigationGuest';
 
+import { isMobile } from 'react-device-detect';
 
 const Layout = ({children}) => {
 
   /*=========== Window and Nav =============*/
 
+ const [activeHeader, setActiveHeader] = useState(() => {
+  if (isMobile) return false;
+  else return true;
+ });
 
- useEffect(() => {
-  const screenWidth  = window.screen.width;
-
-  
-
-  if (screenWidth < 1301) {
-    setaaaa(false)
-  } 
- 
- })
-
- const [aaaa, setaaaa] = useState(true)
-
- const [activeHeader, setActiveHeader] = useState(aaaa);
-
- console.log(activeHeader)
   /*================== Role ====================*/
 
   /* ['Заказчик', 'Исполнитель', 'Гость'] */
@@ -40,6 +29,7 @@ const Layout = ({children}) => {
 
   return ( 
     <>
+
       <header className={styles.header}>
         <div className="header__profileContainer">
           <div className={styles.header__wrapper}>
@@ -63,7 +53,7 @@ const Layout = ({children}) => {
         </div>
       </header>
 
-      <main  className="page profile" style={{backgroundColor: '#f4f4f4',}}>
+      <main  className='page, profile' style={{backgroundColor: '#f4f4f4',}}>
         {
           userRoll === 'Заказчик'
           ?
@@ -101,7 +91,8 @@ const Layout = ({children}) => {
               <div className={styles.footer__control}>
                 <div title="Меню" onClick={() => setActiveHeader(!activeHeader)} className={[styles.footer__contolButton, styles.footer__contolButton_collapse].join(' ')}>
                   {
-                    activeHeader ? 
+                    activeHeader 
+                    ? 
                     '«'
                     :
                     "»"

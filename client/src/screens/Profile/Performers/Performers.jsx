@@ -10,9 +10,14 @@ import Image from "next/image";
 import statusActive from '/public/statusActive.png'
 import statusIsNotActive from '/public/statusIsNotActive.png'
 import arrow from '/public/arrow.png'
+import Head from "next/head";
 
 const Performers = () => {
   return ( 
+   <>
+   <Head>
+     <title>Статус заказа - LegpromRF</title>
+   </Head>
     <Layout>
       <div className={styles.performers}>
         <div className={styles.performers__title}>
@@ -20,9 +25,9 @@ const Performers = () => {
             <div className={styles.performers__number}>№24500968</div>
         </div>
         <div className={styles.performers__header}>
-          <HeaderProfile title="Поставка материала" number="1" href='/' active={true}/>
-          <HeaderProfile title="Пошив изделия" number="2" href='/' active={false}/>
-          <HeaderProfile title="Сдача заказа" number="3" href='/' active={false}/>
+          <HeaderProfile title="Поставка материала" number="1" href='/profile/applications' active={true}/>
+          <HeaderProfile title="Пошив изделия" number="2" href='/profile/tailoring' active={false}/>
+          <HeaderProfile title="Сдача заказа" number="3" href='/profile/change' active={false}/>
         </div>
         <div className={styles.performers__info}>
           <span>В работе над поставкой материала 1 исполнитель:</span>
@@ -176,6 +181,7 @@ const Performers = () => {
         </div>
       </div>
     </Layout>
+   </>
    );
 }
  

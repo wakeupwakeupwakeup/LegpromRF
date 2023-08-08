@@ -74,10 +74,10 @@ const NavigationPerformer = (props) => {
           }}   className={styles.nav__item}>
           <ButtonNavigation title="Управление магазином" href="/" stopPropagation="true" active={activeButton2}>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M5.29697 7.56152V13.0496" stroke="#F5F5F5" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M9.03037 4.93555V13.0497" stroke="#F5F5F5" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12.7032 10.4609V13.0489" stroke="#F5F5F5" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M12.7486 1H5.25143C2.6381 1 1 2.84967 1 5.46813V12.5319C1 15.1503 2.63048 17 5.25143 17H12.7486C15.3695 17 17 15.1503 17 12.5319V5.46813C17 2.84967 15.3695 1 12.7486 1Z" stroke="#F5F5F5" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5.29697 7.56152V13.0496" stroke="#242424" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.03037 4.93555V13.0497" stroke="#242424" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.7032 10.4609V13.0489" stroke="#242424" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7486 1H5.25143C2.6381 1 1 2.84967 1 5.46813V12.5319C1 15.1503 2.63048 17 5.25143 17H12.7486C15.3695 17 17 15.1503 17 12.5319V5.46813C17 2.84967 15.3695 1 12.7486 1Z" stroke="#242424" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </ButtonNavigation> 
           <div onClick={(e) => e.stopPropagation()} className={activeButton2 ? [styles.nav__buttonInfo, styles.nav__buttonActive].join(' ') : styles.nav__buttonInfo}>

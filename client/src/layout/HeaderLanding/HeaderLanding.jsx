@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 import Link from "next/link";
-import Logo from 'public/logo.png'
+import Logo from 'public/Logo/logo.png'
 import ModalLogin from '../Modal/ModalLogin/ModalLogin';
 
 const HeaderLanding = () => {

@@ -7,6 +7,7 @@ import ModalLayout from '@/src/layout/Modal/ModalLayout'
 
 import Link from "next/link";
 import { useState } from "react";
+import Head from 'next/head';
 
 const CreateOrder = () => {
 
@@ -145,7 +146,11 @@ const CreateOrder = () => {
 
   /*==============================================*/
   return ( 
-    <Layout>
+    <>
+    <Head>
+      <title>Создать заказ - LegpromRF</title>
+    </Head>
+     <Layout>
       <div className={styles.createOrder}>
         <TitleProfile>Техническое задание</TitleProfile>
       
@@ -368,7 +373,7 @@ const CreateOrder = () => {
               && valueInput4 !== 'нажмите для выбора' ? [styles.form__buttonForward, styles.form__buttonForwardActive].join(' ') : styles.form__buttonForward}>
             Вперед
           </button>
-
+          </div>
           <ModalLayout active={modalActive} setActive={setModalActive}>
               <h3 className={styles.form__modalTitle}>Укажите свою почту</h3>
               <p className={styles.form__modalSubTitle}>Для получения уведомлений о статусе вашего ТЗ и подтверждения вашего акаунта,  укажите свою электронную почту.</p>
@@ -433,9 +438,10 @@ const CreateOrder = () => {
               </div>
               <div className={styles.form__modalFree}>Вы можете также продолжить работать <br /> <span>бесплатно с ограничениями</span></div>
           </ModalLayout>
-        </div>
+        
       </div>
     </Layout>
+    </>
    );
 }
  

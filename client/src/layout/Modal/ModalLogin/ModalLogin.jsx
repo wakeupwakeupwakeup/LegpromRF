@@ -28,8 +28,6 @@ const ModalLogin = (props) => {
     }
   }
 
-
-
   return ( 
     <ModalLoyout {...props}>
       <form action="" className={styles.form}>

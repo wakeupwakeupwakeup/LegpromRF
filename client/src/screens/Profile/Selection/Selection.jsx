@@ -1,11 +1,14 @@
 import Layout from "@/src/layout/Layout";
 
 import styles from './Selection.module.scss'
+
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
-import Link from "next/link";
+import HeaderProfile from "@/src/components/HeaderProfile/HeaderProfile";
 import SelectionCard from "@/src/components/SelectionCard/SelectionCard";
+
 import Head from 'next/head';
 import { useState } from "react";
+import Link from "next/link";
 
 const Selection = () => {
 
@@ -15,24 +18,15 @@ const Selection = () => {
 
     <Layout>
       <Head>
-        <title>Подбор исполнителя</title>
+        <title>Подбор исполнителя - LegpromRF</title>
       </Head>
 
       <div className={styles.selection}>
         <TitleProfile>Подбор исполнителя</TitleProfile>
         <div className={styles.selection__header}>
-          <div className={[styles.selection__item, styles.selection__item_active].join(' ')}>
-            <Link href="/">
-              <span>Поставка материала</span>
-              <div className={[styles.selection__itemNumber, styles.selection__itemNumber_active].join(' ')}>1</div>
-            </Link>
-          </div>
-          <div className={styles.selection__item}>
-            <Link href="/">
-              <span>Пошив изделия</span>
-              <div className={styles.selection__itemNumber}>2</div>
-            </Link>
-          </div>
+          <HeaderProfile title="Поставка материала" number="1" href='/profile/applications' active={true}/>
+          <HeaderProfile title="Пошив изделия" number="2" href='/profile/tailoring' active={false}/>
+          <HeaderProfile title="Сдача заказа" number="3"  href='/profile/change' active={false}/>
         </div>
         <div className={styles.selection__content}>
             <div className={styles.selection__info}>

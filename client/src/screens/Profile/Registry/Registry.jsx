@@ -6,11 +6,16 @@ import styles from './Registry.module.scss'
 import Link from "next/link";
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
 import Status from "@/src/components/Status/Status";
+import Head from "next/head";
 
 
 
 const Registry = () => {
   return ( 
+    <>
+    <Head>
+      <title>Реестр заказов - LegpromRF</title>
+    </Head>
     <Layout>
       <div className={styles.registry}>
         <TitleProfile>Реестр заказов</TitleProfile>
@@ -145,6 +150,7 @@ const Registry = () => {
         </div>
       </div>
     </Layout>
+    </>
    );
 }
  

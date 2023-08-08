@@ -3,11 +3,13 @@ import HeaderLanding from '../../layout/HeaderLanding/HeaderLanding';
 
 import Image from "next/image";
 import Link from 'next/link';
-import { useState } from 'react'
+import Head from 'next/head';
 
 import Img1 from 'public/Landing/card_img_1.png'
 import Img2 from 'public/Landing/card_img_2.png'
 import Img3 from 'public/Landing/card_img_3.png'
+
+
 
 const Home = () => {
 
@@ -50,6 +52,10 @@ const Home = () => {
 
   return ( 
     <>
+    <Head>
+      <title>LegpromRF – Платформа легкой промышленности – Все предприятия легпрома на одной площадке. Новый способ находить клиентов и поставщиков.</title>
+    </Head>
+    
       <HeaderLanding />
       <main className="page landing">
         <div className="landing__container">
@@ -83,6 +89,7 @@ const Home = () => {
                             alt="Фото изделия"  
                             width={228} 
                             height={228}
+                            placeholder='blur'
                           />
                           <h4 className={styles.card__title}>{card.title}</h4>
                           <p className={styles.card__number}>{card.number}</p>
@@ -127,7 +134,7 @@ const Home = () => {
                       </div>
                     )})}
                   </div>
-                  <div className={styles.landing__fullOrders}><span>Показать еще</span></div>
+                  <div className={styles.landing__fullOrders}><Link href='/profile/registry'>Показать еще</Link></div>
             </div>
                 
           </div>

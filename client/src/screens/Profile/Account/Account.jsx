@@ -8,8 +8,13 @@ import icon from 'public/Account/ico.svg'
 import styles from './Account.module.scss'
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
 import Raiting from "@/src/components/Raiting/Raiting";
+import Head from "next/head";
 const Account = () => {
   return ( 
+   <>
+   <Head>
+    <title>Профиль компании - LegpromRF</title>
+   </Head>
     <Layout>
         <div className={styles.account}>
           <TitleProfile>Профиль компании</TitleProfile>
@@ -286,6 +291,7 @@ const Account = () => {
             </div>
         </div>
     </Layout>
+   </>
    );
 }
  

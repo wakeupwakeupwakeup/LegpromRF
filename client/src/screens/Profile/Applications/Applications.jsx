@@ -2,10 +2,16 @@ import Layout from "@/src/layout/Layout";
 
 import styles from './Applications.module.scss'
 import HeaderProfile from "@/src/components/HeaderProfile/HeaderProfile";
+
+import Head from "next/head";
 import Link from "next/link";
 
 const AboutOrder = () => {
   return ( 
+   <>
+    <Head>
+      <title>Заявки заказа - LegpromRF</title>
+    </Head>
     <Layout>
       <div className={styles.aboutOrder}>
         <div className={styles.aboutOrder__title}>
@@ -14,9 +20,9 @@ const AboutOrder = () => {
         </div>
 
         <div className={styles.aboutOrder__header}>
-          <HeaderProfile title="Поставка материала" number="1" href='/' active={true}/>
-          <HeaderProfile title="Пошив изделия" number="2" href='/' active={false}/>
-          <HeaderProfile title="Сдача заказа" number="3" href='/' active={false}/>
+          <HeaderProfile title="Поставка материала" number="1" href='/profile/applications' active={true}/>
+          <HeaderProfile title="Пошив изделия" number="2" href='/profile/tailoring' active={false}/>
+          <HeaderProfile title="Сдача заказа" number="3" href='/profile/change' active={false}/>
         </div>
 
         <div className={styles.aboutOrder__contol}>
@@ -209,6 +215,7 @@ const AboutOrder = () => {
       </div>
 
     </Layout>
+   </>
    );
 }
  
