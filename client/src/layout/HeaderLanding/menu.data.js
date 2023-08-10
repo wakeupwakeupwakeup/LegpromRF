@@ -1,12 +1,12 @@
 export const links = [
     {
       nameViews: 'Новости платформы',
-      href: '/'
+      href: '/nolayout'
     },
 
     {
       nameViews: 'Тарифы',
-      href: '/',
+      href: '/nolayout',
     },
    
   ];

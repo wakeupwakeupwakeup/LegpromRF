@@ -99,6 +99,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     
     @media (max-width: 1200px) {
       flex: 1 1 100%;
@@ -312,6 +313,8 @@
 
     &_link {
       display: flex;
+      border-radius: 4px;
+      background: #F4F4F4;
     }
 
     

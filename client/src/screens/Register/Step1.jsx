@@ -45,12 +45,12 @@ const Step1 = () => {
       </div>
 
       <div className={styles.form__footer}>
+        <div className={styles.form__employer}><Link href="/nolayout">Вы производитель?</Link></div>
         <Link href={activeInput1 && activeInput2 && activeInput3 ? '/register/verifyPhone' : ''} className={activeInput1 && activeInput2 && activeInput3 ? [styles.form__buttonActive, styles.form__button].join(' ') : styles.form__button}>
         <button 
           disabled={activeInput1 && activeInput2 && activeInput3 ? false : true}
         >Далее</button>
         </Link>
-        <div className={styles.form__employer}>Вы производитель?</div>
       </div>
       </RegistrationLayout>
    );

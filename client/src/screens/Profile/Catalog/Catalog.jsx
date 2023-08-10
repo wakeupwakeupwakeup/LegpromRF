@@ -1,31 +1,18 @@
 import TitleProfile from "@/src/components/TitleProfile/TitleProfile";
 import Layout from "@/src/layout/Layout";
-
-import styles from './News.module.scss'
-
-
-
 import Head from "next/head";
 
-
-
-
-const News = () => {
-
-  
-
+const Catalog = () => {
   return ( 
     <>
       <Head>
-        <title>Новости - LegpromRF</title>
+        <title>Каталог компании - LegpromRF</title>
       </Head>
       <Layout>
-        <div>
-          <TitleProfile>Новости</TitleProfile>
-        </div>
+        <TitleProfile>Каталог</TitleProfile>
       </Layout>
     </>
    );
 }
  
-export default News;
+export default Catalog;

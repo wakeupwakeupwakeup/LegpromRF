@@ -13,7 +13,7 @@ import NavigationGuest from './Navigation/Guest/NavigationGuest';
 
 import { isMobile } from 'react-device-detect';
 
-const Layout = ({children}) => {
+const Layout = ({children, roll}) => {
 
   /*=========== Window and Nav =============*/
 
@@ -25,7 +25,7 @@ const Layout = ({children}) => {
   /*================== Role ====================*/
 
   /* ['Заказчик', 'Исполнитель', 'Гость'] */
-  const userRoll = 'Заказчик';
+  const userRoll = 'Исполнитель';
 
   return ( 
     <>
@@ -34,7 +34,7 @@ const Layout = ({children}) => {
         <div className="header__profileContainer">
           <div className={styles.header__wrapper}>
             <div className={styles.header__logo}>
-              <Link href='/'>
+              <Link href='/profile/home'>
                 <Image 
                   src={LogoHeader} 
                   alt="LegpromRF"  
@@ -53,7 +53,7 @@ const Layout = ({children}) => {
         </div>
       </header>
 
-      <main  className='page, profile' style={{backgroundColor: '#f4f4f4',}}>
+      <main  className='page profile' style={{backgroundColor: '#f4f4f4',}}>
         {
           userRoll === 'Заказчик'
           ?
@@ -74,20 +74,9 @@ const Layout = ({children}) => {
 
       <footer className={styles.footer}>
         <div className="footer__profileContainer">
-          <div className={styles.footer__wrapper}>
+          <div className={activeHeader ? [styles.footer__wrapper, styles.openMenu].join(' ') : [styles.footer__wrapper, styles.closeMenu].join(' ')}>
             <div className={styles.footer__content}>
-              <div className={styles.footer__balance}>
-                <div className={styles.footer__money}>
-                  <div className={styles.footer__money_number}>0 ₽</div>
-                  <div className={styles.footer__money_text}>остаток счета</div>
-                </div>
-                <div className={styles.footer__button}>+</div>
-                <div className={styles.footer__button}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none">
-                    <path d="M1 5.08335H11M11 5.08335L7.25 1M11 5.08335L7.25 9" stroke="#FAFAFA" strokeWidth="1.06364" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </div>
+              
               <div className={styles.footer__control}>
                 <div title="Меню" onClick={() => setActiveHeader(!activeHeader)} className={[styles.footer__contolButton, styles.footer__contolButton_collapse].join(' ')}>
                   {

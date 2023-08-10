@@ -75,7 +75,7 @@ const ChangeOrder = () => {
                       </div>
                       <div className={styles.change__control}>
                         <div className={styles.change__status}>Просмотреть статус</div>
-                        <div className={styles.change__message}><Link href="/">Написать</Link></div>
+                        <div className={styles.change__message}><Link href="/profile/change/">Написать</Link></div>
                       </div>
                     </div>
                 </div>

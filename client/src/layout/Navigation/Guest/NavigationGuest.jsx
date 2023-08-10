@@ -9,18 +9,26 @@ import { useRouter } from 'next/router'
 
 import ad from 'public/icon/ad.svg';
 
-const NavigationGuest = (props) => {
+const NavigationGuest = ({active, setActive}) => {
+
+  const tarif = 'Pro'
 
   const router = useRouter()
   const pathname = router.pathname.split('/')
 
   return ( 
-    <NavifationLayout {...props}>
-      <div className={styles.nav__head}>
-        <h2 className={styles.nav__title}>Гость</h2>
-      </div>
-
-      <div className={styles.nav__buttons}>
+    <div onClick={() => setActive(false)}  className={active ? [styles.nav__bg, styles.nav__bg_active].join(' ') : styles.nav__bg}>
+        <nav onClick={(e) => e.stopPropagation()} className={active ? [styles.nav, styles.nav__active].join(' ') : styles.nav}>
+          <div className={styles.nav__content}>
+            <div className={styles.nav__head}>
+              <div className="nav__profileContainer">
+                <h2 className={styles.nav__title}>Гость</h2>
+                
+              </div>
+            </div>
+            <div className={styles.nav__buttons}>
+              <div className="nav__profileContainer">
+              <div className={styles.nav__buttons}>
         <ButtonNavigation 
         title="Главная" 
         href="/profile/home" 
@@ -93,18 +101,53 @@ const NavigationGuest = (props) => {
           </svg>
         </ButtonNavigation>
       </div>
+              </div>
+            </div>
+            <div className={styles.nav__footer}>
 
-      <div className={styles.nav__ad}>
-        <Link href="/register/step1">
-          <Image 
-            src={ad} 
-            alt="LegpromRF"  
-            width={257} 
-            height={212}
-          />
-        </Link>
-      </div>
-    </NavifationLayout>
+                  <div className={styles.nav__referal}>
+                      <div className="nav__profileContainer">
+                        <Link href="/nolayout">Реферальная программа</Link>
+                      </div>
+                  </div>
+
+                  <div className={styles.nav__ad}>
+                    {
+                      tarif !== 'Pro' 
+                      ? 
+                        <Link href="/">
+                          <Image 
+                              src={ad} 
+                              alt="LegpromRF"  
+                              width={257} 
+                              height={212}
+                            />
+                        </Link>
+                      :
+                        null
+                    }
+                  </div>
+
+                  <div className={styles.nav__wrapper}>
+                    <div className={styles.nav__balance}>
+                      <div className={styles.nav__money}>
+                        <div className={styles.nav__money_number}>0 ₽</div>
+                        <div className={styles.nav__money_text}>остаток счета</div>
+                      </div>
+                      <div className={styles.nav__buttonsFooter}>
+                        <div className={styles.nav__button}>+</div>
+                        <div className={styles.nav__button}>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none">
+                            <path d="M1 5.08335H11M11 5.08335L7.25 1M11 5.08335L7.25 9" stroke="#FAFAFA" strokeWidth="1.06364" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </nav>
+    </div>
    );
 }
  

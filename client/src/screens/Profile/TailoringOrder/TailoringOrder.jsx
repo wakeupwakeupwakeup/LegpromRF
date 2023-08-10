@@ -40,7 +40,7 @@ const Tailoring = () => {
                 <div className={styles.tailoring__warningHeader}>
                   <div className={styles.tailoring__warningTitle}>Вы не выбрали исполнителя для пошива изделия</div>
                   <div className={styles.tailoring__warningButton}>
-                    <Link href="/">Подобрать исполнителя</Link>
+                    <Link href="/profile/selection/">Подобрать исполнителя</Link>
                   </div>
                 </div>
                 <div className={styles.tailoring__warningIcon}>

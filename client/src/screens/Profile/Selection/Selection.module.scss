@@ -17,7 +17,6 @@
     }
   }
 
-
   &__content {
 
     border-radius: 7px;
@@ -76,7 +75,6 @@
 
   &__control {
 
-
     @media (min-width: 1200px) {
       display: flex;
       align-items: center;
@@ -91,9 +89,13 @@
     flex-wrap: wrap;
   }
 
-  &__controlItem {
-    display: flex;
-    align-items: center;
+  &__controlItem { 
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+    
     border-radius: 5.077px;
     background: #EDEDED;
     cursor: pointer;
@@ -106,6 +108,7 @@
 
     &:hover {
       background: #d8d8d8;
+
     }
 
   }
@@ -130,7 +133,7 @@
 
   &__controlIcon {
     padding: 12px;
-
+  
   }
 
   &__respond {

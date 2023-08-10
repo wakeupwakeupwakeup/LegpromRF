@@ -122,7 +122,7 @@ const SelectionCard = ({recommendation, choice}) => {
                   </div>
                 </div>
                 <div className={styles.card__button}>
-                  <div className={styles.card__catalog}><Link href="/">Каталог компании</Link></div>
+                  <div className={styles.card__catalog}><Link href="/profile/catalog">Каталог компании</Link></div>
                   <div onClick={() => setActiveInfo(!activeInfo)} className={styles.card__about}>
                     <span>Подробнее</span>
                     {
@@ -165,7 +165,7 @@ const SelectionCard = ({recommendation, choice}) => {
                     </svg>
                   </div>
                 </div>
-                <div className={[styles.card__fullInfoItem, styles.card__fullInfoItem_link].join(' ')}>
+                <div className={styles.card__fullInfoItem_link}>
                   <div className={styles.card__fullInfoSubTitle}>Адрес на карте</div>
                   <div className={styles.card__fullInfoLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">

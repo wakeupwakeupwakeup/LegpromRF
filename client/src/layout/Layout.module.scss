@@ -94,96 +94,32 @@
   }
 }
 
+
 .footer {
-  background: #1D1C1C;
+  background-color: #1D1C1C;
   position: fixed;
-  width: 100%;
   bottom: 0;
   left: 0;
-  z-index: 10000 !important;
-  color: #FAFAFA;
+  width: 100%;
+  z-index: 50;
   
-  &__containerProfile {}
 
   &__wrapper {
-    @media (min-width: 1300px) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
-  &__logo {
-    @media (max-width: 1300px) {
-      display: none;
-    }
-  }
-
-  &__content {
+    padding: 17px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  &__balance {
+  &__content {
     display: flex;
-    align-items: center;
-    padding: 21px 0;
   }
 
-  &__money {
-    margin-right: 50px;
-
-    @media (max-width: 540px) {
-      margin-right: 20px;
-    }
-   
-    &_number {
-      font-size: 20px;
-      margin-bottom: 4px;
-
-      @media (max-width: 540px) {
-        font-size: 15px;
-        margin-bottom: 2px
-      }
-    }
-
-    &_text{
-      font-size: 12px;
-      font-weight: 300;
-      
-      @media (max-width: 540px) {
-        font-size: 11px;
-        margin-bottom: 2px
-      }
-    }
-  }
-
-  &__button {
-    background-color: #2C2C2C;
-    padding: 5px 20px;
-    font-size: 17px;
-    border-radius: 7px;
-    margin-right: 10px;
-    cursor: pointer;
-    
-    align-items: center;
-
-    &:hover {
-      background-color: #393939;
-    }
-  }
-  
   &__control {
     display: flex;
-    margin-left: 52px;
-
-    @media (max-width: 540px) {
-      margin-left: 20px;
-    }
   }
 
-  &__contolButton {
+   &__contolButton {
     position: relative;
     align-items: center;
     cursor: pointer;
@@ -224,4 +160,3 @@
     }
   }
 }
-

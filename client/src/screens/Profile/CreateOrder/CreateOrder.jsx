@@ -155,10 +155,10 @@ const CreateOrder = () => {
         <TitleProfile>Техническое задание</TitleProfile>
       
         <div className={styles.createOrder__header}>
-          <HeaderProfile title="Характеристики" number="1" href='/' active={true}/>
-          <HeaderProfile title="Тип изделия" number="2" href='/' active={false}/>
-          <HeaderProfile title="Документация" number="3" href='/' active={false}/>
-          <HeaderProfile title="Размеры" number="4" href='/' active={false}/>
+          <HeaderProfile title="Характеристики" number="1" href='/profile/createorder/' active={true}/>
+          <HeaderProfile title="Тип изделия" number="2" href='/nolayout' active={false}/>
+          <HeaderProfile title="Документация" number="3" href='/nolayout' active={false}/>
+          <HeaderProfile title="Размеры" number="4" href='/nolayout' active={false}/>
         </div>
 
         <div className={styles.createOrder__order}>
@@ -436,7 +436,7 @@ const CreateOrder = () => {
                     </Link>
                   </div>
               </div>
-              <div className={styles.form__modalFree}>Вы можете также продолжить работать <br /> <span>бесплатно с ограничениями</span></div>
+              <div className={styles.form__modalFree}><Link href="/profile/selection">Вы можете также продолжить работать <br /> <span>бесплатно с ограничениями</span></Link></div>
           </ModalLayout>
         
       </div>

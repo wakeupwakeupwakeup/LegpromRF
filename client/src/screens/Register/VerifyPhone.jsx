@@ -25,12 +25,13 @@ const VerifyPhone = () => {
       </div>
 
       <div className={styles.form__footer}>
-          <Link href={activeInput1 ? '/register/step2' : ''} className={activeInput1  ? [styles.form__buttonActive, styles.form__button].join(' ') : styles.form__button}>
-            <button 
+        <div className={styles.form__employer}><Link href="/register/step1">Ввести другой номер</Link></div>
+        <Link href={activeInput1 ? '/register/step2' : ''} className={activeInput1  ? [styles.form__buttonActive, styles.form__button].join(' ') : styles.form__button}>
+          <button 
             disabled={activeInput1 ? false : true}
             >Далее</button>
         </Link>
-        <div className={styles.form__employer}>Ввести другой номер</div>
+       
         </div>
     </RegistrationLayout>
    );

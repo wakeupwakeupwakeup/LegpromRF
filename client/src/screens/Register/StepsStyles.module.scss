@@ -61,14 +61,19 @@
   }
 
   &__button {
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 1 100%;
+    flex: 1 1 43%;
     padding: 18px 90px;
     border-radius: 6px;
     background: #FDFDFD;
+
+    @media (max-width: 700px) {
+     width: 100%;
+     order: 1;
+    }
   
     button {
       color: #D8D8D8 ;
@@ -87,22 +92,31 @@
 
   &__footer {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     margin-top: 37px;
- 
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
   }
 
   &__employer {
+    flex: 0 1 57%;
     color: $blue;
     font-size: 16px;
     font-weight: 300;
     text-decoration-line: underline;
     cursor: pointer;
     text-align: center;
-    margin-top: 15px;
 
     &:hover {
       text-decoration-line: none;
+    }
+
+    @media (max-width: 700px) {
+      flex: 0 1 100%;
+      order: 2;
+      margin-top: 20px;
     }
   }
 }
@@ -110,15 +124,24 @@
 .tariff {
 
   &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
   }
    
   &__title {
     font-size: 22px;
     margin-bottom: 10px;
+    line-height: 140%;
   }
 
   &__pro {
-    margin: 5px;
+    margin: 7px;
   }
 
   &__tz {
@@ -126,17 +149,27 @@
     font-size: 15px;
     line-height: 150%;
     font-weight: 300;
+
   }
 
   &__cards {
     display: flex;
-    flex-direction: column;
-    margin-top: 15px;
+    justify-content: space-between;
+    margin: 0 -15px;
 
     & > *:not(:last-child) {
       margin-bottom: 15px;
     }
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
   }
+
+  &__card {
+    padding: 0 15px;
+  }
+
   &__body {
     padding: 25px;
     border-radius: 15px;

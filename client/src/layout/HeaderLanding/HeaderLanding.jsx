@@ -59,7 +59,7 @@ const HeaderLanding = () => {
               </div>
               <div className={styles.header__button}>
                 <div className={styles.header__question}>
-                  <Link href="/">Задать вопрос</Link>
+                  <Link href="/nolayout">Задать вопрос</Link>
                 </div>
                 <div className={styles.header__login} onClick={() => setModalActive(true)}>Войти</div>
                 <ModalLogin active={modalActive} setActive={setModalActive}>

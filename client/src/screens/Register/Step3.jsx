@@ -6,11 +6,12 @@ import Link from 'next/link'
 const Step3 = () => {
   
   return ( 
-    <RegistrationLayout>
+    <RegistrationLayout width="900px">
       <div className={styles.tariff}>
 
         <div className={styles.tariff__header}>
-          <h2 className={styles.tariff__title}>Используйте 
+          <h2 className={styles.tariff__title}>
+            Используйте
             <span className={styles.tariff__pro}>
               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" viewBox="0 0 50 25" fill="none">
                 <rect width="50" height="25" rx="5.35714" fill="url(#paint0_linear_403_41167)"/>
@@ -24,7 +25,9 @@ const Step3 = () => {
                   </linearGradient>
                 </defs>
               </svg>
-            </span> статус для <br />для продуктивной работы своего бизнеса</h2>
+            </span> 
+            статус для <br />для продуктивной работы своего бизнеса
+          </h2>
           <div className={styles.tariff__tz}>*ТЗ - Техническое задание</div>
         </div>
           <div className={styles.tariff__cards}>
@@ -39,7 +42,7 @@ const Step3 = () => {
                   <li className={styles.tariff__item}>- Доступны все алгоритмы платформы для работы</li>
                 </ul>
                 <div className={styles.tariff__link}>
-                  <Link className={[styles.tariff__button, styles.tariff__button_pro].join(' ')} href="/">Выбрать</Link>
+                  <Link className={[styles.tariff__button, styles.tariff__button_pro].join(' ')} href="/nolayout">Выбрать</Link>
                   <p className={styles.tariff__money}>от 200 руб</p>
                 </div>
               </div>
@@ -56,7 +59,7 @@ const Step3 = () => {
                   <li className={styles.tariff__item}>- Доступны не все алгоритмы платформы</li>
                 </ul>
                 <div className={styles.tariff__link}>
-                  <Link className={styles.tariff__button} href="/">Выбрать</Link>
+                  <Link className={styles.tariff__button} href="/profile/home">Выбрать</Link>
                   <p className={styles.tariff__money}>Бесплатно</p>
                 </div>
               </div>
