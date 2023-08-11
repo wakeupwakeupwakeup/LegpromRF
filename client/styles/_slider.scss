@@ -60,4 +60,17 @@
   background: #c5c4c4 !important;
 }
 
+.sliderBottom {
+  position: relative;
+}
+
+.sliderGradient {
+  position: absolute;
+  width: 160px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(270deg, #F5F5F5 0%, rgba(245, 245, 245, 0.00) 100%);
+}
+
 

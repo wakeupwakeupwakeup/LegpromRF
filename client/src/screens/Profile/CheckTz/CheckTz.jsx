@@ -64,11 +64,18 @@ const CheckTz = () => {
     ),
     responsive: [
       {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
       },
      ]
   };
@@ -116,7 +123,7 @@ const CheckTz = () => {
                   </div>
                 </div>
               </div>
-              <div className={styles.checktz__respond}><Link href="/">Откликнуться</Link></div>
+              <div className={styles.checktz__respond}><Link href="/profile/offer">Откликнуться</Link></div>
             </div>
           </div>
         </div>
@@ -127,11 +134,11 @@ const CheckTz = () => {
         <div className={styles.card}>
           <div className={styles.card__body}>
             <div className={styles.card__head}>
-              <div className={[styles.card__headItem, styles.card__headItem_active].join(' ')}>Основная информация</div>
-              <div className={styles.card__headItem}>Изделие</div>
-              <div className={styles.card__headItem}>Документация</div>
-              <div className={styles.card__headItem}>Размеры изделия</div>
-              <div className={styles.card__headItem}>Условия закупки</div>
+              <div className={[styles.card__headItem, styles.card__headItem_active].join(' ')}><Link href="/profile/checkTz/">Основная информация</Link></div>
+              <div className={styles.card__headItem}><Link href="/nolayout">Изделие</Link></div>
+              <div className={styles.card__headItem}><Link href="/nolayout">Документация</Link></div>
+              <div className={styles.card__headItem}><Link href="/nolayout">Размеры изделия</Link></div>
+              <div className={styles.card__headItem}><Link href="/nolayout">Условия закупки</Link></div>
             </div>
             <div className={styles.card__content}>
               <div className={styles.card__slider}>
@@ -157,7 +164,10 @@ const CheckTz = () => {
                         <img  src={item.src} alt={item.alt} />
                       </div>
                     ))}
+
+                    
                   </Slider>
+                  <div className="sliderGradient"></div>
                 </div>
               </div>
         

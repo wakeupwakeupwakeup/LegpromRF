@@ -32,8 +32,8 @@ const Performers = () => {
         <div className={styles.performers__info}>
           <span>В работе над поставкой материала 1 исполнитель:</span>
           <div className={styles.performers__infoButton}>
-            <div className={styles.performers__infoItem}><Link href="/">Нанять еще</Link></div>
-            <div className={styles.performers__infoItem}><Link href="/">Подобрать еще</Link></div>
+            <div className={styles.performers__infoItem}><Link href="/profile/applications/">Нанять еще</Link></div>
+            <div className={styles.performers__infoItem}><Link href="/profile/selection/">Подобрать еще</Link></div>
           </div>
         </div>
         <div className={styles.performers__company}>
@@ -52,16 +52,16 @@ const Performers = () => {
             </div>
             <div className={styles.performers__companyButton}>
               <div className={styles.performers__companyItem}>
-                <Link className={styles.performers__companyItem_red} href='/'>Найти замену</Link>
+                <Link className={styles.performers__companyItem_red} href='/profile/applications/'>Найти замену</Link>
               </div>
               <div className={styles.performers__companyItem}>
-                <Link href='/'>Подписать договор</Link>
+                <Link href='/profile/performers/'>Подписать договор</Link>
               </div>
               <div className={styles.performers__companyItem}>
-                <Link href='/'>Безопасная сделка</Link>
+                <Link href='/profile/performers/'>Безопасная сделка</Link>
               </div>
               <div className={styles.performers__companyItem}>
-                <Link className={styles.performers__companyItem_blue} href='/'>Написать</Link>
+                <Link className={styles.performers__companyItem_blue} href='/profile/chat/'>Написать</Link>
               </div>
             </div>
           </div>

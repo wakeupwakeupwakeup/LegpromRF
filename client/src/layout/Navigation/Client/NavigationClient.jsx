@@ -1,6 +1,5 @@
 import styles from './NavigationClient.module.scss'
 
-import NavifationLayout from "../NavigationLayout/NavifationLayout";
 import ButtonNavigation from '@/src/UI/ButtonNavigation/ButtonNavigation';
 import HeaderNavigation from '@/src/UI/HeaderNavigation/HeaderNavigation';
 
@@ -98,7 +97,8 @@ const NavigationClient = ({active, setActive}) => {
                           pathname[2] == 'performers' || 
                           pathname[2] == 'archive' ||
                           pathname[2] == 'tailoring' || 
-                          pathname[2] == 'change'
+                          pathname[2] == 'change' ||
+                          pathname[2] == 'offer'
                           ? 
                             true
                           : 

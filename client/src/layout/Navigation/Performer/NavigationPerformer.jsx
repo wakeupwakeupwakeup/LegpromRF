@@ -1,6 +1,5 @@
 import styles from './Performer.module.scss'
 
-import NavifationLayout from '../NavigationLayout/NavifationLayout';
 import HeaderNavigation from '@/src/UI/HeaderNavigation/HeaderNavigation';
 import ButtonNavigation from '@/src/UI/ButtonNavigation/ButtonNavigation';
 
