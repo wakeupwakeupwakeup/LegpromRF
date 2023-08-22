@@ -85,6 +85,11 @@
     padding: 21.5px 0;
     background-color: #242424;
     color: #fafafa;
+
+    
+  @media (min-width: 1300px) {
+    padding: 22px 0;
+  }
   }
 
   &__balance {
@@ -149,9 +154,5 @@
       margin-left: 20px;
     }
   }  
-
-
-
-
 
 }

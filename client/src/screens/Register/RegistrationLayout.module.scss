@@ -102,8 +102,6 @@
     position: relative;
     z-index: 10;
     margin-bottom: 15px;
-
-    
   }
 
   &__step {
@@ -192,6 +190,10 @@
  
   &__body {
     padding: 35px;
+
+    @media (max-width: 600px) {
+      padding: 25px;
+    }
   }
 }
 
@@ -221,4 +223,3 @@
   color: #FFF;
 
 }
-  

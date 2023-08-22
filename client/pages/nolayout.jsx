@@ -8,7 +8,7 @@ const NoLayout = () => {
   const router = useRouter()
   
   return ( 
-   <Layout>
+   <>
      <div style={
       {textAlign: 'center', marginTop: '150px'}}>
         
@@ -24,7 +24,7 @@ const NoLayout = () => {
         Назад
       </button>
     </div>
-   </Layout>
+  </>
    );
 }
  

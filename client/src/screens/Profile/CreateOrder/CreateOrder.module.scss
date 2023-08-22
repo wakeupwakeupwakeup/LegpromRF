@@ -28,6 +28,10 @@
 
   &__content {
     padding: 15px 50px 10px 50px;
+
+    @media (max-width: 600px) {
+      padding: 20px 30px 10px 30px;
+    }
   }
 
   &__type {
@@ -40,6 +44,10 @@
     @media (min-width: 900px) {
       display: flex;
       align-items: center;
+    }
+
+    @media (max-width: 600px) {
+      padding: 20px 35px;
     }
   }
 
@@ -189,9 +197,11 @@
     width: 220px;
 
     @media (max-width: 900px) {
+      margin-top: 15px;
       width: 100%;
-      padding: 25px;
+      padding: 18px;
       font-size: 15px;
+
     }
   }
 
