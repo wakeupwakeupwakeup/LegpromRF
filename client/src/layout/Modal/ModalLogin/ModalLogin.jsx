@@ -2,7 +2,7 @@ import styles from './ModalLogin.module.scss';
 
 import Link from "next/link";
 
-import ModalLoyout from '../ModalLayout';
+import ModalLayout from '../ModalLayout';
 
 import { useState } from 'react';
 import { useRouter } from 'next/router'
@@ -32,7 +32,7 @@ const ModalLogin = (props) => {
   }
 
   return ( 
-    <ModalLoyout {...props}>
+    <ModalLayout {...props}>
       <form action="" className={styles.form}>
         <div className={styles.form__loginTitle}>Вход</div>
         <div className={styles.form__inputs}>
@@ -51,7 +51,7 @@ const ModalLogin = (props) => {
         </div>
        </div>
       </form>
-    </ModalLoyout>
+    </ModalLayout>
    );
 }
  

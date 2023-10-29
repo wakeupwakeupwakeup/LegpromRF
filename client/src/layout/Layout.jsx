@@ -1,7 +1,6 @@
 import styles from './Layout.module.scss'
 
 import LogoHeader from 'public/Logo/logo.png'
-import LogoFooter from 'public/Logo/logoWhite.png'
 
 import Image from "next/image";
 import Link from 'next/link';
