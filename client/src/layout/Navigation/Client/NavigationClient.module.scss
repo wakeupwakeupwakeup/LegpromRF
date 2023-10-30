@@ -11,14 +11,12 @@
   transition: all .3s ease-in;
   transform: translate(-234px);
 
-
   &__active {
     transform: translate(0%);
   }
 
     &__content {
     min-height: 100%;
-    padding: 25px 0;
     display: flex;
     flex-direction: column;
     transition: all .5s ease 0s;

@@ -77,6 +77,38 @@
   transform: rotate(45deg) translate(0px, 72%);
 }
 
+.home {
+  &__header {
+    width: 100%;
+    padding: 16px 26px;
+    border-radius: 10px;
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width:1300px) {
+      margin-top: 100px;
+    }
+
+  }
+
+  &__welcome {
+
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .openMenu {
   margin: 36px 0 0 324px;
   transition: all .3s ease-in;

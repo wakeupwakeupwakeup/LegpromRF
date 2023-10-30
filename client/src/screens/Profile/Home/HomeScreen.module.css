@@ -6,25 +6,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 30px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 32px;
 }
 @media (max-width: 1300px) {
   .home__header {
     margin-top: 100px;
   }
 }
+@media (max-width: 1024px) {
+  .home__header {
+    flex-direction: column;
+  }
+}
 .home__text {
   font-size: 16px;
+}
+.home__text_nowrap {
+  white-space: nowrap;
+}
+@media (max-width: 1024px) {
+  .home__text {
+    margin-bottom: 12px;
+    text-align: center;
+  }
 }
 .home__contacts {
   display: flex;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  .home__contacts {
+    flex-direction: column;
+  }
+}
 
 .block {
-  margin-top: 20px;
+  margin-bottom: 32px;
 }
 .block__title {
   text-transform: uppercase;
@@ -43,6 +62,7 @@
   }
 }
 .block__card {
+  max-width: 355px;
   display: flex;
   flex: 1 1 25%;
   flex-wrap: wrap;

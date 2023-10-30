@@ -5,7 +5,7 @@ const ButtonNavigation = ({children, href, title, stopPropagation, active, activ
   return ( 
 
     /*onClick={(e) => stopPropagation == 'true' ? e.stopPropagation() : null*/ 
-    <div className={styles.button}>
+    <div className={[styles.button, active && styles.button_closed].join(' ')}>
         {
         stopPropagation === 'true' ?
 
