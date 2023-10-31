@@ -28,27 +28,49 @@ const Layout = ({children, roll}) => {
   return ( 
     <>
 
-      <header className={styles.header}>
-        <div className="header__profileContainer">
-          <div className={styles.header__wrapper}>
-            <div className={styles.header__logo}>
-              <Link href='/profile/home'>
-                <Image 
-                  src={LogoHeader} 
-                  alt="LegpromRF"  
-                  width={135} 
-                  height={35}
-                />
-              </Link>
-            </div>
-            <div 
-              onClick={() => setActiveHeader(!activeHeader)} 
-              className={activeHeader ? [styles.header__menuActive, styles.header__burger].join(' ') : styles.header__burger}
-            >
-              <span></span>
-            </div>
+      <header >
+          <div className={styles.header}>
+              <div className="header__profileContainer">
+                  <div className={styles.header__wrapper}>
+                      <div className={styles.header__logo}>
+                          <Link href='/profile/home'>
+                              <Image
+                                  src={LogoHeader}
+                                  alt="LegpromRF"
+                                  width={135}
+                                  height={35}
+                              />
+                          </Link>
+                      </div>
+                      <div
+                          onClick={() => setActiveHeader(!activeHeader)}
+                          className={activeHeader ? [styles.header__menuActive, styles.header__burger].join(' ') : styles.header__burger}
+                      >
+                          <span></span>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
+          <div className={activeHeader ? [styles.home__header, styles.home__header_open].join(' ') : [styles.home__header, styles.home__header_close].join(' ')}>
+              <div className={[styles.home__welcome, styles.home__text].join(' ')}>Добро пожаловать, ekb-invest103@yandex.ru !</div>
+              <div className={styles.home__contacts}>
+                  <div className={styles.home__text_nowrap}>Обращайтесь! Тел: +7-958-111-4884</div>
+                  <div className={styles.home__links}>
+                      <Link
+                          className={""}
+                          href={"https://wa.me/+79261894737"}
+                      >
+                          WA
+                      </Link>
+                      <Link
+                          className={""}
+                          href={"http://t.me/LegpromRF_bot"}
+                      >
+                          TG
+                      </Link>
+                  </div>
+              </div>
+          </div>
       </header>
 
       <main  className='page profile' style={{backgroundColor: '#f4f4f4',}}>

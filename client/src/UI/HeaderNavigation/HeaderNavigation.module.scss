@@ -54,15 +54,27 @@
     gap: 9px;
     justify-content: space-between;
 
+    &_closed {
+      flex-direction: column;
+    }
   }
 
   &__item {
+    display: flex;
     border-radius: 7px;
     background: #F5F5F5;
     padding: 15px 32px;
+    justify-content: end;
+    opacity: 1;
+    transition: opacity .4s ease;
+
+    &_inactive {
+      opacity: 0;
+      display: none;
+    }
 
     &_closed {
-      display: none;
+      padding: 15px 18px;
     }
 
     &:hover {
