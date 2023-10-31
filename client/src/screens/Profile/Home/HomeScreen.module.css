@@ -1,49 +1,5 @@
-.home__header {
-  width: 100%;
-  padding: 16px 26px;
-  border-radius: 10px;
-  background-color: #FAFAFA;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 32px;
-}
-@media (max-width: 1300px) {
-  .home__header {
-    margin-top: 100px;
-  }
-}
-@media (max-width: 1024px) {
-  .home__header {
-    flex-direction: column;
-  }
-}
-.home__text {
-  font-size: 16px;
-}
-.home__text_nowrap {
-  white-space: nowrap;
-}
-@media (max-width: 1024px) {
-  .home__text {
-    margin-bottom: 12px;
-    text-align: center;
-  }
-}
-.home__contacts {
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 1024px) {
-  .home__contacts {
-    flex-direction: column;
-  }
-}
-
 .block {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 .block__title {
   text-transform: uppercase;

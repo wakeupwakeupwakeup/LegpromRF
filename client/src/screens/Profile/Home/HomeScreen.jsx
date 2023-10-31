@@ -12,26 +12,6 @@ const HomePage = () => {
       <title>Добро пожаловать в LegpromRF</title>
     </Head>
     <Layout>
-      <div className={styles.home__header}>
-        <div className={[styles.home__welcome, styles.home__text].join(' ')}>Добро пожаловать, ekb-invest103@yandex.ru !</div>
-        <div className={styles.home__contacts}>
-          <div className={styles.home__text_nowrap}>Обращайтесь! Тел: +7-958-111-4884</div>
-          <div className={styles.home__links}>
-            <Link
-                className={""}
-                href={"https://wa.me/+79261894737"}
-            >
-              WA
-            </Link>
-            <Link
-                className={""}
-                href={"http://t.me/LegpromRF_bot"}
-            >
-              TG
-            </Link>
-          </div>
-        </div>
-      </div>
       <div className={styles.container}>
         <div className={[styles.home__start, styles.block].join(' ')}>
           <div className={styles.block__title}>Управление закупками</div>

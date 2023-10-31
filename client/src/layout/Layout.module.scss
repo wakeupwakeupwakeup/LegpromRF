@@ -1,5 +1,70 @@
 @import '@/styles/_variables.scss';
 
+.home {
+  &__header {
+    padding: 16px 26px;
+    border-radius: 10px;
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: margin-left .4s ease-in-out;
+
+
+    @media (max-width:1300px) {
+      margin-top: 100px;
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+
+    &_open {
+      @media (min-width:1300px) {
+        margin: 16px 24px 48px 320px;
+      }
+
+    }
+
+    &_close {
+      @media (min-width:1300px) {
+        margin: 16px 24px 48px 90px;
+      }
+    }
+
+  }
+
+  &__welcome {
+
+  }
+
+  &__text {
+    font-size: 16px;
+
+
+    &_nowrap {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1024px) {
+      margin-bottom: 12px;
+      text-align: center
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+}
+
+
 .header {
   display: none;
 
@@ -77,45 +142,13 @@
   transform: rotate(45deg) translate(0px, 72%);
 }
 
-.home {
-  &__header {
-    width: 100%;
-    padding: 16px 26px;
-    border-radius: 10px;
-    background-color: #FAFAFA;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-
-    @media (max-width:1300px) {
-      margin-top: 100px;
-    }
-
-  }
-
-  &__welcome {
-
-  }
-
-  &__text {
-    font-size: 16px;
-  }
-
-  &__contacts {
-    display: flex;
-    align-items: center;
-  }
-}
-
 .openMenu {
-  margin: 36px 0 0 324px;
+  margin: 16px 0 0 324px;
   transition: all .3s ease-in;
 }
 
 .closeMenu {
-  margin: 36px 0 0 64px;
+  margin: 16px 0 0 64px;
   transition: all .3s ease-in;
 }
 

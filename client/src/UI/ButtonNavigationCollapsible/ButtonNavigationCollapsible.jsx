@@ -4,7 +4,7 @@ import {useState} from "react";
 import React from "react";
 
 
-const ButtonNavigationCollapsible = ({children, title, stopPropagation, active, activeLink, links}) => {
+const ButtonNavigationCollapsible = ({children, title, stopPropagation, hide, active, activeLink, links}) => {
     const [open, setOpen] = useState(false);
 
     function handleClick () {
@@ -13,7 +13,7 @@ const ButtonNavigationCollapsible = ({children, title, stopPropagation, active, 
     return (
 
         /*onClick={(e) => stopPropagation == 'true' ? e.stopPropagation() : null*/
-        <div className={styles.button}>
+        <div className={[styles.button, hide && active && styles.button_closed].join(' ')}>
             {
                 stopPropagation === 'true' ?
 

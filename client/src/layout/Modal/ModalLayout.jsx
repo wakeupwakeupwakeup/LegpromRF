@@ -3,8 +3,10 @@ import styles from './ModalLayout.module.scss'
 import closeModal from 'public/icon/close.svg'
 
 import Image from 'next/image';
+import {useState} from "react";
 
 const Modal = ({active, setActive, children, height}) => {
+    const [loginMode, setLoginMode] = useState('')
   return ( 
     <div className={active ? [styles.modal, styles.modal__active].join(' ') : styles.modal} onClick={() =>setActive(false)}>
       <div className={styles.modal__content} onClick={e => e.stopPropagation()}>

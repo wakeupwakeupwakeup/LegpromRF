@@ -88,7 +88,7 @@
     display: inline-flex;
     cursor: pointer;
     
-    a {
+    button {
       color: #fff;
       font-size: 20px;
       font-weight: 500;
@@ -98,7 +98,7 @@
       border-radius: 15px;
       transition: all .4s ease-in;
     }
-      & a:hover {
+      & button:hover {
         background-color: $blueHover;
       }
 
