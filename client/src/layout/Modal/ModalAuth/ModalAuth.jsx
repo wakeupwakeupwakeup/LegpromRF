@@ -73,7 +73,7 @@ const ModalAuth = () => {
         script.onload = () => {
             window.YaAuthSuggest.init(
                 {
-                    client_id: '288ebfbd899f4d74a1d38a43a9747c18',
+                    client_id: 'a6273e01cb89483dbecc90c845a8360a',
                     response_type: 'token',
                     redirect_uri: `https://legprom-rf.vercel.app/profile/home`
                 },
