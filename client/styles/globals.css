@@ -105,6 +105,7 @@ body {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   background-color: #F5F5F5;
+  overflow-x: hidden;
 }
 
 #__next {

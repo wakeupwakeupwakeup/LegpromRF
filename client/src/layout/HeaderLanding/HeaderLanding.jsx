@@ -8,9 +8,13 @@ import { useEffect } from 'react';
 import Link from "next/link";
 import Logo from 'public/Logo/logo.png'
 import ModalLogin from '../Modal/ModalLogin/ModalLogin';
+import ModalAuth from "@/src/layout/Modal/ModalAuth/ModalAuth";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleModal, setModal } from "@/src/store/auth/authModal.slice";
 
 const HeaderLanding = () => {
-
+    const dispatch = useDispatch()
+    const isShown = useSelector((state) => state.authModal.isShown)
   const [modalActive, setModalActive] = useState(false)
   const [activeMenu, setActiveMenu] = useState(false);
 
@@ -61,9 +65,8 @@ const HeaderLanding = () => {
                 <div className={styles.header__question}>
                   <Link href="/nolayout">Задать вопрос</Link>
                 </div>
-                <div className={styles.header__login} onClick={() => setModalActive(true)}>Войти</div>
-                <ModalLogin active={modalActive} setActive={setModalActive}>
-                </ModalLogin>
+                <div className={styles.header__login} onClick={() => dispatch(toggleModal())}>Авторизация</div>
+                <ModalAuth />
               </div>
           </div>
         </div>

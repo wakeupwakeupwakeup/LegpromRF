@@ -77,7 +77,7 @@ const Home = () => {
                     ваше техническое задание.
                   </p>
                 </div>
-                <ModalRegister active={modalActive} setActive={setModalActive} />
+                {/*<ModalRegister active={modalActive} setActive={setModalActive} />*/}
               </div>
             </div>
             <div className={styles.landing__right}>

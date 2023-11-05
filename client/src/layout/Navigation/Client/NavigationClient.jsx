@@ -1,42 +1,30 @@
 import styles from './NavigationClient.module.scss'
 
 import ButtonNavigation from '@/src/UI/ButtonNavigation/ButtonNavigation';
+import ButtonNavigationCollapsible from "@/src/UI/ButtonNavigationCollapsible/ButtonNavigationCollapsible";
 import HeaderNavigation from '@/src/UI/HeaderNavigation/HeaderNavigation';
 
 import Link from 'next/link'
 import Image from 'next/image';
 import Logo from 'public/Logo/logo.png'
 import { useRouter } from 'next/router'
-import ButtonNavigationCollapsible from "@/src/UI/ButtonNavigationCollapsible/ButtonNavigationCollapsible";
 import {useState} from "react";
+import {useDispatch, useSelector } from "react-redux";
+import {toggleNav, setNav } from "@/src/store/navigation/navigation.slice";
 
-const NavigationClient = ({active, setActive}) => {
-    const [activeCollapse, setActiveCollapse] = useState(false)
-    const tariff = 'Pro'
+const NavigationClient = () => {
+    const isNavOpen = useSelector((state) => state.navigation.isNavOpen)
+    const dispatch = useDispatch()
+
     const router = useRouter()
     const pathname = router.pathname.split('/')
 
-    const createOrderIcon = (
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
-            <path fillRule="evenodd" clipRule="evenodd" d="M10.1358 1.00977H4.34032C2.54645 1.00977 1 2.46386 1 4.25861V13.7107C1 15.6065 2.44451 16.9996 4.34032 16.9996H11.2998C13.0945 16.9996 14.5495 15.5054 14.5495 13.7107V5.60641L10.1358 1.00977Z" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M9.90723 1V3.53443C9.90723 4.77158 10.9083 5.77525 12.1454 5.77786C13.292 5.78048 14.4655 5.78135 14.5448 5.77612" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M9.7504 9.85554H5.48047" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M7.61531 11.9906V7.7207" stroke="#242424" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-    )
-
-    const ordersIcon = (
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <circle cx="9" cy="9" r="8" stroke="#242424" strokeWidth="1.3"/>
-            <path d="M8.5 5.5V9.5L12 11.5" stroke="#242424" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-    )
-
+    const tariff = 'Pro'
 
   return ( 
     <>
-      <div onClick={() => setActive(false)}  className={active ? [styles.nav__bg, styles.nav__bg_active].join(' ') : styles.nav__bg}>
-        <nav onClick={(e) => e.stopPropagation()} className={active ? [styles.nav, styles.nav__active].join(' ') : styles.nav}>
+      <div onClick={() => setNav(false)}  className={isNavOpen ? [styles.nav__bg, styles.nav__bg_active].join(' ') : styles.nav__bg}>
+        <nav onClick={(e) => e.stopPropagation()} className={isNavOpen ? [styles.nav, styles.nav__active].join(' ') : styles.nav}>
           <div className={styles.nav__content}>
             <div className={styles.nav__head}>
                 <div className={styles.nav__logo}>
@@ -50,7 +38,7 @@ const NavigationClient = ({active, setActive}) => {
                     </Link>
                 </div>
                 <h2 className={styles.nav__title}>Кабинет</h2>
-                <HeaderNavigation active={active} title="Global IT" mail="ekb-invest103@yandex.ru" tariff={tariff}/>
+                <HeaderNavigation active={isNavOpen} title="Global IT" mail="ekb-invest103@yandex.ru" tariff={tariff}/>
             </div>
             <div className={styles.nav__buttons}>
                 <ButtonNavigation
@@ -73,7 +61,7 @@ const NavigationClient = ({active, setActive}) => {
                 <ButtonNavigationCollapsible
                     title="Закупки"
                     href="/nolayout"
-                    active={active}
+                    active={isNavOpen}
                     links={
                         {
                             'Каталог поставщиков': {
@@ -107,7 +95,7 @@ const NavigationClient = ({active, setActive}) => {
                 <ButtonNavigationCollapsible
                     title="Продажи"
                     href="/nolayout"
-                    active={active}
+                    active={isNavOpen}
                     links={
                         {
                             'Входящие заказы': {
@@ -139,7 +127,7 @@ const NavigationClient = ({active, setActive}) => {
                 <ButtonNavigationCollapsible
                     title="Новости"
                     href="/nolayout"
-                    active={active}
+                    active={isNavOpen}
                     links={
                         {
                             'Новости отрасли': {
@@ -169,9 +157,8 @@ const NavigationClient = ({active, setActive}) => {
                 <ButtonNavigationCollapsible
                     title="Настройки"
                     href="/nolayout"
-                    active={active}
+                    active={isNavOpen}
                     hide={true}
-                    onClick={() => setActiveCollapse(true)}
                     links={
                         {
                             'Профиль компании': {
@@ -317,9 +304,9 @@ const NavigationClient = ({active, setActive}) => {
 
                   <div className={styles.nav__wrapper}>
                       <div className={styles.footer__control}>
-                          <div title="Меню" onClick={() => setActive(!active)} className={[styles.footer__contolButton, styles.footer__contolButton_collapse].join(' ')}>
+                          <div title="Меню" onClick={() => dispatch(toggleNav())} className={[styles.footer__contolButton, styles.footer__contolButton_collapse].join(' ')}>
                               {
-                                  active
+                                  isNavOpen
                                       ?
                                       '«'
                                       :
@@ -327,20 +314,6 @@ const NavigationClient = ({active, setActive}) => {
                               }
                           </div>
                       </div>
-                    {/*<div className={styles.nav__balance}>*/}
-                    {/*  /!*<div className={styles.nav__money}>*!/*/}
-                    {/*  /!*  <div className={styles.nav__money_number}>0 ₽</div>*!/*/}
-                    {/*  /!*  <div className={styles.nav__money_text}>остаток счета</div>*!/*/}
-                    {/*  /!*</div>*!/*/}
-                    {/*  /!*<div className={styles.nav__buttonsFooter}>*!/*/}
-                    {/*  /!*  <div className={styles.nav__button}>+</div>*!/*/}
-                    {/*  /!*  <div className={styles.nav__button}>*!/*/}
-                    {/*  /!*    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none">*!/*/}
-                    {/*  /!*      <path d="M1 5.08335H11M11 5.08335L7.25 1M11 5.08335L7.25 9" stroke="#FAFAFA" strokeWidth="1.06364" strokeLinecap="round" strokeLinejoin="round"/>*!/*/}
-                    {/*  /!*    </svg>*!/*/}
-                    {/*  /!*  </div>*!/*/}
-                    {/*  /!*</div>*!/*/}
-                    {/*</div>*/}
                   </div>
             </div>
           </div>
