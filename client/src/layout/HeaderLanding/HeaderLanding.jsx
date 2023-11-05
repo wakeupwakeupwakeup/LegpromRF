@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 
 import Link from "next/link";
 import Logo from 'public/Logo/logo.png'
-import ModalLogin from '../Modal/ModalLogin/ModalLogin';
 import ModalAuth from "@/src/layout/Modal/ModalAuth/ModalAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal, setModal } from "@/src/store/auth/authModal.slice";

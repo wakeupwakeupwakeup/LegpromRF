@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import React, {useEffect, useState} from 'react';
 import {Controller, useForm} from "react-hook-form";
+import {Router, useNavigate} from 'react-router-dom';
 
 import InputMask from 'react-input-mask';
 import Link from "next/link";
@@ -14,15 +15,19 @@ import {setAuthMethod, setAuthMode, setVerifying, toggleModal } from "@/src/stor
 
 import ModalLayout from '../ModalLayout';
 import styles from './ModalRegister.module.scss';
+import {createSelector} from "@reduxjs/toolkit";
 
 
 const ModalAuth = () => {
 
-    const [authMode, authMethod, verifying] = useSelector((state) => [
-        state.authModal.authMode,
-        state.authModal.authMethod,
-        state.authModal.verifying
-    ])
+    const selectAuthModal = (state) => state.authModal;
+    const selectAuthData = createSelector(selectAuthModal, (authModal) => ({
+        authMode: authModal.authMode,
+        authMethod: authModal.authMethod,
+        verifying: authModal.verifying,
+    }))
+    const { authMode, authMethod, verifying } = useSelector(selectAuthData);
+
     const dispatch = useDispatch();
 
     const validationSchema = yup.object().shape({
@@ -70,9 +75,9 @@ const ModalAuth = () => {
                 {
                     client_id: '288ebfbd899f4d74a1d38a43a9747c18',
                     response_type: 'token',
-                    redirect_uri: redirectURI
+                    redirect_uri: `https://legprom-rf.vercel.app/profile/home`
                 },
-                `/http://localhost:3000/tokenpage/`,
+                `https://legprom-rf.vercel.app/tokenpage/`,
                 {
                     view: "button",
                     parentId: "yandex",
@@ -297,21 +302,30 @@ const ModalAuth = () => {
                                             )} />
                                         {errors.email && <p>{errors.email.message}</p>}
                                     </>
-
                                     :
-                                    <Controller
-                                        name='phone'
-                                        control={control}
-                                        render={({ field }) => (
-                                            <InputMask
-                                                mask="+7 (999) 999-99-99"
-                                                type='text'
-                                                placeholder='Телефон'
-                                                {...field}
-                                            />
-                                        )} />
-
+                                    <>
+                                        <Controller
+                                            name='phone'
+                                            control={control}
+                                            render={({ field }) => (
+                                                <InputMask
+                                                    mask="+7 (999) 999-99-99"
+                                                    type='text'
+                                                    placeholder='Телефон'
+                                                    {...field}
+                                                />
+                                            )} />
+                                        {errors.phone && <p>{errors.phone.message}</p>}
+                                    </>
                             }
+                            <button
+                                className={styles.form__button}
+                                onClick={() => handleVerification(authMethod)}
+                                type={"button"}
+                                disabled={Object.keys(errors).length > 0}
+                            >
+                                Далее
+                            </button>
                         </div>
                     </form>
                 )
