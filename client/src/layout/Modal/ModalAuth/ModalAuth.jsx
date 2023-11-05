@@ -91,7 +91,13 @@ const ModalAuth = () => {
                     return result.handler()
                 })
                 .then(function(data) {
-                    // Запрос на бэк с этим токеном
+                    const apiURL = `http://5.63.155.51//auth/register_yandexid`
+                    axios.post(apiURL, {
+                        access_token: data.access_token
+                    })
+                        .then((response) => console.log(response.data))
+                        .catch((error) => console.log(error))
+
                     console.log('Сообщение с токеном: ', data);
                     document.body.innerHTML += `Сообщение с токеном: ${JSON.stringify(data)}`;
                 })
