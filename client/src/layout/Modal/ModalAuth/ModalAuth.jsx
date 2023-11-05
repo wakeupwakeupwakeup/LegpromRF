@@ -88,11 +88,18 @@ const ModalAuth = () => {
                     buttonIcon: 'ya',
                 }
             )
-                .then(({handler}) => handler())
-                .then(data => {
-                    console.log('Сообщение с токеном', data)
+                .then(function(result) {
+                    return result.handler()
                 })
-                .catch(error => console.log('Обработка ошибки', error))
+                .then(function(data) {
+                    // Запрос на бэк с этим токеном
+                    console.log('Сообщение с токеном: ', data);
+                    document.body.innerHTML += `Сообщение с токеном: ${JSON.stringify(data)}`;
+                })
+                .catch(function(error) {
+                    console.log('Что-то пошло не так: ', error);
+                    document.body.innerHTML += `Что-то пошло не так: ${JSON.stringify(error)}`;
+                });
         };
 
         return () => {
