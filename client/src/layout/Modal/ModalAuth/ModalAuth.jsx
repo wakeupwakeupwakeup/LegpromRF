@@ -75,7 +75,7 @@ const ModalAuth = () => {
                 {
                     client_id: 'a6273e01cb89483dbecc90c845a8360a',
                     response_type: 'token',
-                    redirect_uri: `https://legprom-rf.vercel.app/profile/home`
+                    redirect_uri: `https://legprom-rf.vercel.app/`
                 },
                 `https://legprom-rf.vercel.app/tokenpage/`,
                 {

@@ -8,8 +8,7 @@ function TokenPage() {
         document.head.appendChild(script);
 
         script.onload = () => {
-            // Ваш код для инициализации скрипта с параметрами, как в вашем примере
-            window.YaSendSuggestToken('/http://localhost:3000/tokenpage/', {
+            window.YaSendSuggestToken('https://legprom-rf.vercel.app/tokenpage/', {
                 flag: true,
             });
         };
