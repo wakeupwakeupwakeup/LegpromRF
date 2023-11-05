@@ -8,7 +8,7 @@ function TokenPage() {
         document.head.appendChild(script);
 
         script.onload = () => {
-            window.YaSendSuggestToken('https://legprom-rf.vercel.app/tokenpage/', {
+            window.YaSendSuggestToken('https://legprom-rf.vercel.app/', {
                 flag: true,
             });
         };
