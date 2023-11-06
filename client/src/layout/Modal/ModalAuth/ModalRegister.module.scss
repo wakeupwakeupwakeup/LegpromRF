@@ -71,6 +71,7 @@
   &__footer {
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 
     span {
@@ -99,8 +100,8 @@
     align-items: center;
   }
 
-  &__IDlogo {
-    margin-right: 12px;
+  &__ID {
+    width: 100%;
   }
 
   &__IDname {

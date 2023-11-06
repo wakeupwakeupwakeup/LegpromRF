@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import React, {useEffect, useState} from 'react';
 import {Controller, useForm} from "react-hook-form";
 import {Router, useNavigate} from 'react-router-dom';
+import { Config, Connect, ConnectEvents } from '@vkontakte/superappkit';
 
 import InputMask from 'react-input-mask';
 import Link from "next/link";
@@ -16,6 +17,7 @@ import {setAuthMethod, setAuthMode, setVerifying, toggleModal } from "@/src/stor
 import ModalLayout from '../ModalLayout';
 import styles from './ModalRegister.module.scss';
 import {createSelector} from "@reduxjs/toolkit";
+import {VKAuthButtonCallbackResult} from "@vkontakte/superappkit";
 
 
 const ModalAuth = () => {
@@ -80,10 +82,10 @@ const ModalAuth = () => {
                 {
                     view: "button",
                     parentId: "yandex",
-                    buttonSize: 's',
-                    buttonView: 'icon',
+                    buttonSize: 'xs',
+                    buttonView: 'main',
                     buttonTheme: 'light',
-                    buttonBorderRadius: "16",
+                    buttonBorderRadius: "18",
                     buttonIcon: 'ya',
                 }
             )
@@ -107,10 +109,67 @@ const ModalAuth = () => {
                 });
         };
 
-        return () => {
+        Config.init({
+            appId: 51786995, // Тут нужно подставить ID своего приложения.
 
-        };
-    }, [authMode]);
+            appSettings: {
+                agreements: '',
+                promo: '',
+                vkc_behavior: '',
+                vkc_auth_action: '',
+                vkc_brand: '',
+                vkc_display_mode: '',
+            },
+        });
+
+        const oneTapButton = Connect.buttonOneTapAuth({
+            callback: (event) => {
+                const { type } = event;
+
+                if (!type) {
+                    return;
+                }
+
+                switch (type) {
+                    case ConnectEvents.OneTapAuthEventsSDK.LOGIN_SUCCESS: // = 'VKSDKOneTapAuthLoginSuccess'
+                        console.log(event);
+                        return
+                    // Для этих событий нужно открыть полноценный VK ID чтобы
+                    // пользователь дорегистрировался или подтвердил телефон
+                    case ConnectEvents.OneTapAuthEventsSDK.FULL_AUTH_NEEDED: //  = 'VKSDKOneTapAuthFullAuthNeeded'
+                    case ConnectEvents.OneTapAuthEventsSDK.PHONE_VALIDATION_NEEDED: // = 'VKSDKOneTapAuthPhoneValidationNeeded'
+                    case ConnectEvents.ButtonOneTapAuthEventsSDK.SHOW_LOGIN: // = 'VKSDKButtonOneTapAuthShowLogin'
+                        // url - строка с url, на который будет произведён редирект после авторизации.
+                        // state - состояние вашего приложение или любая произвольная строка, которая будет добавлена к url после авторизации.
+                        return Connect.redirectAuth({ url: 'https://legprom-rf.vercel.app/profile/home'});
+                }
+
+                return;
+            },
+            // Не обязательный параметр с настройками отображения OneTap
+            options: {
+                showAlternativeLogin: false,
+                showAgreements: false,
+                displayMode: 'default',
+                langId: 0,
+                buttonSkin: 'primary',
+                buttonStyles: {
+                    borderRadius: 30,
+                    height: 40,
+                },
+            },
+        });
+
+// Получить iframe можно с помощью метода getFrame()
+        if (oneTapButton) {
+
+            document
+                .getElementById('vk')
+                .appendChild(oneTapButton.getFrame());
+        }
+
+// Удалить iframe можно с помощью OneTapButton.destroy();
+    }, [verifying]);
 
 
     const handleVerification = async (kind) => {
@@ -255,13 +314,14 @@ const ModalAuth = () => {
                             </button>
                         </div>
                         <div className={styles.form__footer}>
-                            <div className={styles.form__ID}>
-                                <div
-                                    className={styles.form__IDlogo}
-                                    id="yandex"
-                                ></div>
-                                <div className={styles.form__IDname}>Яндекс ID</div>
-                            </div>
+                            <div
+                                className={styles.form__ID}
+                                id="yandex"
+                            ></div>
+                            <div
+                                className={styles.form__ID}
+                                id="vk"
+                            ></div>
                         </div>
                     </form>
                 )
