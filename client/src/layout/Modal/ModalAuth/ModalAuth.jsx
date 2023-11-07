@@ -3,9 +3,8 @@ import axios from 'axios'
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Controller, useForm} from "react-hook-form";
-import {Router, useNavigate} from 'react-router-dom';
 import { Config, Connect, ConnectEvents } from '@vkontakte/superappkit';
 
 import InputMask from 'react-input-mask';
@@ -17,7 +16,7 @@ import {setAuthMethod, setAuthMode, setVerifying, toggleModal } from "@/src/stor
 import ModalLayout from '../ModalLayout';
 import styles from './ModalRegister.module.scss';
 import {createSelector} from "@reduxjs/toolkit";
-import {VKAuthButtonCallbackResult} from "@vkontakte/superappkit";
+import {apiEndpoints} from "@/src/utils/constants/apiEndpoints";
 
 
 const ModalAuth = () => {
@@ -52,7 +51,6 @@ const ModalAuth = () => {
 
     const {
         control,
-        handleSubmit,
         formState: { errors },
         getValues
     } = useForm({
@@ -61,12 +59,7 @@ const ModalAuth = () => {
     });
 
     useEffect(() => {
-        let redirectURI = ``
-        if (authMode === 'register') {
-            const redirectURI = ` https://justifyapi.ru/auth/register_yandexid/`
-        } else if (authMode === 'login') {
-            const redirectURI = ` https://justifyapi.ru/auth/login_yandexid/`
-        }
+
         const script = document.createElement('script');
         script.src = 'https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js';
         script.async = true;
@@ -93,8 +86,13 @@ const ModalAuth = () => {
                     return result.handler()
                 })
                 .then(function(data) {
-                    const apiURL = `http://5.63.155.51//auth/register_yandexid`
-                    axios.post(apiURL, {
+                    let redirectURI = ``
+                    if (authMode === 'register') {
+                        const redirectURI = apiEndpoints.yandexReg
+                    } else if (authMode === 'login') {
+                        const redirectURI = apiEndpoints.yandexLogin
+                    }
+                    axios.post(redirectURI, {
                         access_token: data.access_token
                     })
                         .then((response) => console.log(response.data))
@@ -110,7 +108,7 @@ const ModalAuth = () => {
         };
 
         Config.init({
-            appId: 51786995, // Тут нужно подставить ID своего приложения.
+            appId: 51786995,
 
             appSettings: {
                 agreements: '',
@@ -134,8 +132,6 @@ const ModalAuth = () => {
                     case ConnectEvents.OneTapAuthEventsSDK.LOGIN_SUCCESS: // = 'VKSDKOneTapAuthLoginSuccess'
                         console.log(event);
                         return
-                    // Для этих событий нужно открыть полноценный VK ID чтобы
-                    // пользователь дорегистрировался или подтвердил телефон
                     case ConnectEvents.OneTapAuthEventsSDK.FULL_AUTH_NEEDED: //  = 'VKSDKOneTapAuthFullAuthNeeded'
                     case ConnectEvents.OneTapAuthEventsSDK.PHONE_VALIDATION_NEEDED: // = 'VKSDKOneTapAuthPhoneValidationNeeded'
                     case ConnectEvents.ButtonOneTapAuthEventsSDK.SHOW_LOGIN: // = 'VKSDKButtonOneTapAuthShowLogin'
@@ -146,7 +142,6 @@ const ModalAuth = () => {
 
                 return;
             },
-            // Не обязательный параметр с настройками отображения OneTap
             options: {
                 showAlternativeLogin: false,
                 showAgreements: false,
@@ -160,7 +155,6 @@ const ModalAuth = () => {
             },
         });
 
-// Получить iframe можно с помощью метода getFrame()
         if (oneTapButton) {
 
             document
@@ -168,8 +162,7 @@ const ModalAuth = () => {
                 .appendChild(oneTapButton.getFrame());
         }
 
-// Удалить iframe можно с помощью OneTapButton.destroy();
-    }, [verifying]);
+    }, []);
 
 
     const handleVerification = async (kind) => {
@@ -180,7 +173,7 @@ const ModalAuth = () => {
         } else {
             login = data.email
         }
-        const apiURL = `http://5.63.155.51:8000/auth/send_verification/`
+        const apiURL = apiEndpoints.verification
         const params = {
             login: login,
             kind: kind
@@ -207,7 +200,7 @@ const ModalAuth = () => {
             login = data.email
         }
 
-        const apiURL = `http://5.63.155.51:8000/auth/register/`
+        const apiURL = apiEndpoints.register
         const params = {
             login: login,
             kind: authMethod,

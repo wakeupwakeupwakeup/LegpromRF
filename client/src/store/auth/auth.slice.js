@@ -6,15 +6,17 @@ export const authSlice = createSlice({
         isAuthenticated: false
     },
     reducers: {
-        loginSuccess: (state) => {
+        login: (state) => {
             state.isAuthenticated = true;
+            history.push('/profile/home')
         },
         logout: (state) => {
             state.isAuthenticated = false;
+            history.push('/')
         }
 
     }
 })
 
-export const { toggleModal, setModal } = authSlice.actions
+export const { login, logout } = authSlice.actions
 export default authSlice.reducer
